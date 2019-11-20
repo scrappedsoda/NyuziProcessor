@@ -22,8 +22,12 @@ fobj_out = open(bin_file_name,"wb")
 
 # Parse file line by line
 for line in fobj_in:
-	hex_val = util.s2h(line)
-	fobj_out.write(struct.pack('>I',hex_val))
+    if line.startswith('//'):
+            continue
+    if line.startswith('@'):
+        line = line[1:]
+    hex_val = util.s2h(line)
+    fobj_out.write(struct.pack('>I',hex_val))
 	
 # Everything went well
 print("Success")
