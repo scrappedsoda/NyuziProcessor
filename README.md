@@ -46,3 +46,8 @@ It's purpose is to list all files stored on the SD card via UART. Using the boar
 11) If you choose the `scene_viewer` application for Nyuzi, control the rotation with the pushbuttons.
 
 > In addition to rotating the objects, you can move within the scene. This is only useful when loading `luigi_circuit`. To do so, set at least one switch to `on` which changes the behavior of the pushbuttons.
+
+
+
+## Additional software needed:
+`sudo apt install imagemagick-6.q16` to get the convert program, which is used wen generating the resouce files
