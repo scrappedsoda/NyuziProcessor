@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Abstract SoC Design Laboratory}
+
+\author{\textit{Group name:} Gupferl \\
+\textit{Members:} David Freismuth (1326907), Andreas Glinserer (1525864), \\
+Johannes Ivancsics (1325895)}
+\date{October 2019}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{biblatex}
+
+\begin{document}
+
+\maketitle
+
+\section{Abstract}
+Our plan for the lab is to modify the Nyuzi GPGPU \cite{NYUZI} by substituting
+the Multiply-Accumulate-Unit (MAC) within it. The substitute modules shall use approximate computing methodologies. We will compare the two implementations
+by establishing a Quality of Result (QoR) metric. This metric shall include:
+\begin{itemize}
+    \item Frames per second (FPS)
+    \item Signal to Noise Ratio (SNR)
+    \item Energy Consumption
+    \item Area Consumption
+\end{itemize}
+
+The goal should be to improve the FPS by this approach while sustaining a 
+humanly undetectable quality loss. Furthermore we hope to reduce
+the energy consumption and the area needed for the Nyuzi 
+Implementation.\\
+
+Our approach would be to use approximate adders for the integer operations
+and for the floating point operations \cite{Mittal:2016:STA:2891449.2893356}.
+
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}
