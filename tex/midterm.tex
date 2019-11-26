@@ -1,9 +1,13 @@
 \documentclass{beamer}
 \usepackage[utf8]{inputenc}
-
+%\usepackage[bottom]{footmisc}
 \usepackage{utopia} %font utopia imported
 
-\usepackage{biblatex}
+\usepackage[
+backend=biber,
+style=alphabetic,
+citestyle=authortitle 
+]{biblatex}
 \usepackage{ulem}           % packaged to strike out things
 \usepackage{graphicx}
 \graphicspath{{./img/}}
@@ -81,9 +85,9 @@ Johannes Ivancsics (1325895)] % (optional)
 \section{Nyuzi GPU}
 \begin{frame}{Nyuzi}
     \begin{itemize}
-        \item<1-> Creator: Jeff Bush \cite{Nyuzi}
+        \item<1-> Creator: Jeff Bush \footcite{Nyuzi}
         \item<2-> Open Source (Verilog)
-        \item<3-> Inspired by Intel's Larrabee \cite{Seiler:2008:LMX:1360612.1360617}
+        \item<3-> Inspired by Intel's Larrabee \footcite{Seiler:2008:LMX:1360612.1360617}
     \end{itemize}
 \end{frame}
 \begin{frame}{Block Diagram}
@@ -120,7 +124,7 @@ Johannes Ivancsics (1325895)] % (optional)
 
 \begin{frame}{Challenges}
     \begin{itemize}
-        \item<1-> SoC-Lab 2018 brought Nyuzi onto a FPGA\cite{NyuziKessler}
+        \item<1-> SoC-Lab 2018 brought Nyuzi onto a FPGA\footcite{NyuziKessler}
         \item<2-> Starting from there
         \item<3-> Doesn't compile anymore \ldots
     \end{itemize}
@@ -134,7 +138,7 @@ Johannes Ivancsics (1325895)] % (optional)
  \begin{column}{0.7\textwidth}
  
     \begin{itemize}
-        \item<1->Focus on \textit{"low hanging fruits"} described in \cite{Mittal:2016:STA:2891449.2893356}
+        \item<1->Focus on \textit{"low hanging fruits"} described in \footcite{Mittal:2016:STA:2891449.2893356}
         \item<2->Stay compatible to existing tool chain
         \item<3->Achieve a certain \textit{Quality of Result} (QoR)
         \item<4->Reduce area and power consumption
@@ -192,7 +196,7 @@ Johannes Ivancsics (1325895)] % (optional)
 \end {columns}
 \end{frame}
 
-\begin{frame}{Inexact Hardware$^{\text{\cite{7974112}}}$}
+\begin{frame}{Inexact Hardware$^{\text{\footcite{7974112}}}$}
 \begin {columns}
  \begin{column}{0.5\textwidth}
  
