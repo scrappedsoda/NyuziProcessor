@@ -19,8 +19,8 @@
 %------------------------------------------------------------
 %This block of code defines the information to appear in the
 %Title page
-\title[Approximate GPU] %optional
-{Approximate GPU}
+\title[Implementation of Approximate Computing Methods in Nyuzi] %optional
+{Implementation of Approximate Computing Methods in Nyuzi}
 
 \subtitle{SoC-Lab WS19}
 
@@ -136,7 +136,7 @@ Johannes Ivancsics (1325895)] % (optional)
     \begin{itemize}
         \item<1->Focus on \textit{"low hanging fruits"} described in \cite{Mittal:2016:STA:2891449.2893356}
         \item<2->Stay compatible to existing tool chain
-        \item<3->Achieve a certain \textit{quality of result} (QoR)
+        \item<3->Achieve a certain \textit{Quality of Result} (QoR)
         \item<4->Reduce area and power consumption
         \item<5->Only secondary: Throughput
     \end{itemize}
@@ -145,7 +145,6 @@ Johannes Ivancsics (1325895)] % (optional)
   \begin{column}{0.3\textwidth}
     \begin{figure}
      \includegraphics[width=\textwidth]{img/target.png}
-     \caption{Source: https://tophatmedia.com.au/linkedin-done-for-you/png-photo-hd-target-0/}
     \end{figure}
   \end{column}
 \end {columns}
@@ -175,7 +174,7 @@ Johannes Ivancsics (1325895)] % (optional)
 
 \begin{frame}{Fixed Point Representation}
 \begin {columns}
- \begin{column}{0.7\textwidth}
+ \begin{column}{0.5\textwidth}
  
     \begin{itemize}
         \item<1->Remove floating point unit
@@ -185,10 +184,9 @@ Johannes Ivancsics (1325895)] % (optional)
     \end{itemize}
     
  \end{column}
-  \begin{column}{0.3\textwidth}
+ \begin{column}{0.5\textwidth}
     \begin{figure}
-     \includegraphics[width=\textwidth]{img/FixedPonitRepresentation.jpg}
-     \caption{Source: https://tophatmedia.com.au/linkedin-done-for-you/png-photo-hd-target-0/}
+     \includegraphics[height=0.75\textheight]{img/FixedPonitRepresentation.jpg}
     \end{figure}
   \end{column}
 \end {columns}
@@ -196,22 +194,21 @@ Johannes Ivancsics (1325895)] % (optional)
 
 \begin{frame}{Inexact Hardware$^{\text{\cite{7974112}}}$}
 \begin {columns}
- \begin{column}{0.7\textwidth}
+ \begin{column}{0.5\textwidth}
  
     \begin{itemize}
         \item<1->Replace Adders/Multipliers with inexact combinatorial logic
         \item<2->Yields result within one clock cycle
         \item<3->Applicable to integer unit 
-        \item<4->Applicable to mantisse operations
+        \item<4->Applicable to mantissa operations
         \item<5->Reduces area and power consumption
-        \item<6->No increase in Ops/second
+        \item<6->No increase in Ops/clock
     \end{itemize}
     
  \end{column}
-  \begin{column}{0.3\textwidth}
+  \begin{column}{0.5\textwidth}
     \begin{figure}
-     \includegraphics[width=\textwidth]{img/target.png}
-     \caption{Source: https://tophatmedia.com.au/linkedin-done-for-you/png-photo-hd-target-0/}
+     \includegraphics[width=0.8\textwidth]{img/inaccurateHardware.jpg}
     \end{figure}
   \end{column}
 \end {columns}
@@ -250,8 +247,8 @@ Johannes Ivancsics (1325895)] % (optional)
 
 \begin{frame}{Evaluation areas}
     \begin{itemize}
-        \item<1-> Peak Signal-to-Noise Ratio (PSNR)
-        \item<2-> Focus on image processing
+        \item<1-> Focus on image processing
+        \item<2-> Peak Signal-to-Noise Ratio (PSNR)
         \item<3-> Area consumption
         \item<4-> Power consumption
     \end{itemize}
@@ -265,6 +262,7 @@ Johannes Ivancsics (1325895)] % (optional)
             \begin{itemize}
                 \item<1-> 8 FPS on i5 processor
                 \item<2-> No optimisation for multithreading
+                \item<3-> Does not use floating point unit
             \end{itemize}
     \end{itemize}
 \end{frame}
