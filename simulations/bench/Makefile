@@ -1,7 +1,10 @@
 TARGET=simtop
-.PHONY: $(TARGET)
+ADDTARGET=app_add_top
+
+.PHONY: $(TARGET) $(ADDTARGET)
+
 RTLSRC=../src
-all: $(TARGET)
+all: $(TARGET) $(ADDTARGET)
 
 LDFLAGS=
 CFLAGS=-g -O3
@@ -13,10 +16,25 @@ $(TARGET):
 run: $(TARGET)
 	./$(TARGET)/V$(TARGET)
 
+
+$(ADDTARGET):
+	verilator -Wno-fatal -I$(RTLSRC)/ --cc $(@) --trace --exe ../$(@).cpp  -Mdir $(@) -CFLAGS "$(CFLAGS)"
+	make -C $(@) -f V$(@).mk
+
+run_add: $(ADDTARGET)
+	./$(ADDTARGET)/V$(ADDTARGET)
+ra: run_add
+
+
+
 view:
 	gtkwave ./$(TARGET)/V$(TARGET).vcd &
 
-clean:: 
+clean:
 	rm -rf *.o $(TARGET)
-distclean:: clean
-	rm -rf *~ *.txt *.vcd *.mif *.orig
+	rm -rf *.o $(ADDTARGET)
+
+distclean: clean
+	rm -rf *.txt *.vcd *.mif *.orig
+	rm -r $(TARGET)
+	rm -r $(ADDTARGET)
