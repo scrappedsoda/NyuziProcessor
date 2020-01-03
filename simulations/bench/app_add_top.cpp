@@ -12,7 +12,7 @@
 #include <iomanip>
 
 #define TESTCASES 20
-#define TESTOTAL 5
+#define TESTOTAL 7
 
 inline void dump(VerilatedVcdC*);
 
@@ -26,9 +26,9 @@ double sc_time_stamp () {       // Called by $time in Verilog
 
 
 typedef struct {
-	uint32_t a;
-	uint32_t b;
-	uint32_t sol;
+	long a;
+	long b;
+	long sol;
 } Testcase;
 
 
@@ -43,11 +43,20 @@ void initData(Testcase *tc, int ops) {
 			case 1:		// 10 < x <= 100
 			case 2:		// x < 1000
 			case 3:		// x < 10000
-				// I add +1 to a to avoid fancy div0
-				tc[i].a = std::rand() % (9*int(std::pow(10,ops))) + int(std::pow(10,ops));
-				tc[i].b = std::rand() % (9*int(std::pow(10,ops))) + int(std::pow(10,ops));
+				tc[i].a = (std::rand() % (int(std::pow(10,ops+1)- std::pow(10,ops)))) + int(std::pow(10,ops));
+				tc[i].b = (std::rand() % (int(std::pow(10,ops+1)- std::pow(10,ops)))) + int(std::pow(10,ops));
 				break;
-			case 4:		// x < 1000000000
+			case 4:
+				tc[i].a = (std::rand() % (int(std::pow(2,24)- std::pow(2,20)))) + int(std::pow(2,20));
+				tc[i].b = (std::rand() % (int(std::pow(2,24)- std::pow(2,20)))) + int(std::pow(2,20));
+				break;
+
+			case 5:
+				tc[i].a = (std::rand() % (int(std::pow(2,28)- std::pow(2,24)))) + int(std::pow(2,24));
+				tc[i].b = (std::rand() % (int(std::pow(2,28)- std::pow(2,24)))) + int(std::pow(2,24));
+				break;
+
+			case 6:
 				tc[i].a = std::rand() % int(std::pow(2,31));
 				tc[i].b = std::rand() % int(std::pow(2,31));
 				break;
@@ -65,7 +74,10 @@ void checkOutput(Vapp_add_top *uut, Testcase tc) {
 	static bool firstTime;
 
 	if (!firstTime) {
-		std::cout << "    Val Cpp |"\
+		std::cout 
+				  << "    Val A   |"\
+				  << "    Val B   |"\
+				  << "    Val Cpp |"\
 				  << "    Val SysV|"\
 				  << "    Val App |"\
 				  << "RelF SV & C |"\
@@ -80,7 +92,13 @@ void checkOutput(Vapp_add_top *uut, Testcase tc) {
 	relf1 = (double) labs(sol1-solc)/solc*100;
 	relf2 = (double) labs(appr-solc)/solc*100;
 
-	std::cout 	<< std::setw(12) << solc << "|"\
+//	std::cout << uut->a << " " << tc.a << std::endl;
+//	std::cout << uut->b << " " << tc.b << std::endl;
+
+	std::cout\
+				<< std::setw(12) << uut->a << "|"\
+				<< std::setw(12) << uut->b << "|"\
+				<< std::setw(12) << solc << "|"\
 				<< std::setw(12) << sol1 << "|"\
 				<< std::setw(12) << appr << "|";
 
@@ -126,26 +144,32 @@ int main(int argc, char** argv)
 
     while (!Verilated::gotFinish())
     {
-        uut->clk = uut->clk ? 0 : 1;       // Toggle clock
-        uut->eval();            // Evaluate model
+		if (run == 0 && !uut->clk) {
+			initData(tcs, lrun);
+//			for (int i = 0; i < TESTCASES; i++)
+//				std::cout << tcs[i].a << " " << tcs[i].b << std::endl;
+//			std::cout << "Pre Print Ende." << std::endl;
+		}
+
 
 		dump(tfp);
 
-		if (run == 0) {
-			initData(tcs, lrun);
-		}
-
- 
-        main_time++;            // Time passes...
 
 		if (!uut->clk) {
+			// set values when clk is low
 			uut->a = tcs[run].a;
 			uut->b = tcs[run].b;
 
 		} else {
+			// check when clk is high
 			checkOutput(uut, tcs[run]);
 			run++;
 		}
+
+        uut->clk = uut->clk ? 0 : 1;       // Toggle clock
+        uut->eval();            // Evaluate model
+
+        main_time++;            // Time passes...
 
 		if (run >= TESTCASES && lrun >= TESTOTAL-1)
 			break;

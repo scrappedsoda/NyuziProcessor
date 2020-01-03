@@ -36,5 +36,3 @@ clean:
 
 distclean: clean
 	rm -rf *.txt *.vcd *.mif *.orig
-	rm -r $(TARGET)
-	rm -r $(ADDTARGET)
