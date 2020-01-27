@@ -78,8 +78,7 @@ module fp_execute_stage1(
     logic is_itof;
 
     assign is_fmul = of_instruction.alu_op == OP_MUL_F;
-    assign is_imul = of_instruction.alu_op == OP_MULL_I || of_instruction.alu_op == OP_MULH_U
-        || of_instruction.alu_op == OP_MULH_I;
+    assign is_imul = 0
     assign is_ftoi = of_instruction.alu_op == OP_FTOI;
     assign is_itof = of_instruction.alu_op == OP_ITOF;
 

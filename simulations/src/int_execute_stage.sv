@@ -15,6 +15,8 @@
 //
 
 `include "defines.sv"
+`include "app_add_top.sv"
+`include "app_mul_top.sv"
 
 import defines::*;
 
@@ -75,6 +77,11 @@ module int_execute_stage(
             scalar_t lane_operand2;
             scalar_t lane_result;
             scalar_t difference;
+			scalar_t app_sum;
+			scalar_t product;
+			logic mul_sign
+			logic[15:0] multiplicant;
+			logic[15:0] multiplier
             logic borrow;
             logic negative;
             logic overflow;
@@ -96,6 +103,49 @@ module int_execute_stage(
             assign zero = difference == 0;
             assign signed_gtr = overflow == negative;
 
+			// The approximate adder.
+			app_add_top app_add_lane( 
+				.clk (clk),
+				.reset (reset),
+				.a (lane_operand1),
+				.b (lane_operand2)
+				.of_output_app (app_sum));
+			
+			// The approximate multiplier.
+			module app_mul_top(
+				.clk (clk),
+				.reset (reset),
+				.multiplicant (multiplicant),
+				.multiplier (multiplier),
+				.product (product),
+				.sign (mul_sign));
+			
+			// Array slicing for the multiplier.
+			always_comb
+			begin
+				case(of_instruction.alu_op)
+					OP_MULL_I:
+					begin
+						multiplicant <= lane_operand1[15:0];
+						multiplier <= lane_operand2[15:0];
+						mul_sign <= 0
+					end
+					OP_MULH_U:
+					begin
+						multiplicant <= lane_operand1[31:16];
+						multiplier <= lane_operand2[31:16];
+						mul_sign <= 0
+					end
+					OP_MULH_I:
+					begin
+						multiplicant <= lane_operand1[31:16];
+						multiplier <= lane_operand2[31:16];
+						mul_sign <= 1
+					end
+				endcase
+			
+			end
+			
             // Count leading zeroes
             always_comb
             begin
@@ -222,7 +272,7 @@ module int_execute_stage(
                     OP_CTZ: lane_result = scalar_t'(tz);
                     OP_AND: lane_result = lane_operand1 & lane_operand2;
                     OP_XOR: lane_result = lane_operand1 ^ lane_operand2;
-                    OP_ADD_I: lane_result = lane_operand1 + lane_operand2;
+                    OP_ADD_I: lane_result = app_sum;
                     OP_SUB_I: lane_result = difference;
                     OP_CMPEQ_I: lane_result = {{31{1'b0}}, zero};
                     OP_CMPNE_I: lane_result = {{31{1'b0}}, !zero};
@@ -239,6 +289,9 @@ module int_execute_stage(
                     OP_SHUFFLE,
                     OP_GETLANE: lane_result = of_operand1[~lane_operand2];
                     OP_RECIPROCAL: lane_result = reciprocal;
+					OP_MULL_I: lane_result = product; 
+					OP_MULH_U: lane_result = product;
+					OP_MULH_I: lane_result = product;
                     default: lane_result = 0;
                 endcase
             end
