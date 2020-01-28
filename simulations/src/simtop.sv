@@ -28,18 +28,23 @@ module simtop(
 	output logic[31:0]							   of_output_4
 );
 
+	// local variants of the operands and inputs
     decoded_instruction_t of_instruction;
 	vector_t of_operand1;
 	vector_t of_operand2;
 
+	// put the input instruciton and pipeline selection into the struct
 	assign of_instruction.alu_op = of_instruction_i;
 	assign of_instruction.pipeline_sel = of_pipeline_sel;
 
+	// assign the output from the last stage to the real output
 	assign of_output_1 = fx5_result[0];
 	assign of_output_2 = fx5_result[1];
 	assign of_output_3 = fx5_result[2];
 	assign of_output_4 = fx5_result[3];
 
+	// generate to copy the 4 input values along the 16 lanes
+	// this is done for operand1 and operand2
 	genvar i;
 	generate
 		for (i = 0; i < 4; i++) begin
@@ -55,6 +60,12 @@ module simtop(
 			
 		end
 	endgenerate
+
+	//
+	// from here on out nyuzi specific stuff
+	//
+
+
 
     logic [NUM_VECTOR_LANES-1:0] [7:0] fx1_add_exponent;// From fp_execute_stage1 of fp_execute_stage1.v
     logic [NUM_VECTOR_LANES-1:0] fx1_add_result_sign;// From fp_execute_stage1 of fp_execute_stage1.v

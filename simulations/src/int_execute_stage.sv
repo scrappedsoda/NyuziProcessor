@@ -79,9 +79,9 @@ module int_execute_stage(
             scalar_t difference;
 			scalar_t app_sum;
 			scalar_t product;
-			logic mul_sign
+			logic mul_sign;
 			logic[15:0] multiplicant;
-			logic[15:0] multiplier
+			logic[15:0] multiplier;
             logic borrow;
             logic negative;
             logic overflow;
@@ -108,11 +108,12 @@ module int_execute_stage(
 				.clk (clk),
 				.reset (reset),
 				.a (lane_operand1),
-				.b (lane_operand2)
-				.of_output_app (app_sum));
+				.b (lane_operand2),
+				.of_output_app (app_sum)
+			);
 			
 			// The approximate multiplier.
-			module app_mul_top(
+			app_mul_top app_multiplier(
 				.clk (clk),
 				.reset (reset),
 				.multiplicant (multiplicant),
@@ -128,19 +129,19 @@ module int_execute_stage(
 					begin
 						multiplicant <= lane_operand1[15:0];
 						multiplier <= lane_operand2[15:0];
-						mul_sign <= 0
+						mul_sign <= 0;
 					end
 					OP_MULH_U:
 					begin
 						multiplicant <= lane_operand1[31:16];
 						multiplier <= lane_operand2[31:16];
-						mul_sign <= 0
+						mul_sign <= 0;
 					end
 					OP_MULH_I:
 					begin
 						multiplicant <= lane_operand1[31:16];
 						multiplier <= lane_operand2[31:16];
-						mul_sign <= 1
+						mul_sign <= 1;
 					end
 				endcase
 			
