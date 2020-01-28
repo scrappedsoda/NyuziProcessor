@@ -25,6 +25,7 @@ double sc_time_stamp () {       // Called by $time in Verilog
 }
 
 
+// struct for testcases
 typedef struct {
 	long a;
 	long b;
@@ -32,6 +33,7 @@ typedef struct {
 } Testcase;
 
 
+// get random testvalues and calculate the solution in cpp for comparison
 void initData(Testcase *tc, int ops) {
 	for (int i = 0; i < TESTCASES; i++) {
 		// would be easier to just use ops as multiplicator
@@ -70,7 +72,9 @@ void initData(Testcase *tc, int ops) {
 }
 
 
+// check output and print it pretty
 void checkOutput(Vapp_add_top *uut, Testcase tc) {
+	// to get a correct first print
 	static bool firstTime;
 
 	if (!firstTime) {
@@ -84,17 +88,19 @@ void checkOutput(Vapp_add_top *uut, Testcase tc) {
 				  << "RelF App & C\r\n";
 		firstTime = true;
 	}
+
+	// use this to not use th elong names
 	long sol1 = uut->of_output_ori;
 	long appr = uut->of_output_app;
 	long solc = tc.sol;
 
+	// relative error caluclation
 	double relf1, relf2;
 	relf1 = (double) labs(sol1-solc)/solc*100;
 	relf2 = (double) labs(appr-solc)/solc*100;
 
-//	std::cout << uut->a << " " << tc.a << std::endl;
-//	std::cout << uut->b << " " << tc.b << std::endl;
 
+	// the priting part
 	std::cout\
 				<< std::setw(12) << uut->a << "|"\
 				<< std::setw(12) << uut->b << "|"\
@@ -109,6 +115,7 @@ void checkOutput(Vapp_add_top *uut, Testcase tc) {
 
 
 
+// the main
 int main(int argc, char** argv)
 {
 	Testcase tcs[TESTCASES];
@@ -123,8 +130,10 @@ int main(int argc, char** argv)
     uut->eval();
     uut->eval();
 
+	// vcd enabled?
     if (vcdTrace)
     {
+		// turn tracer on
         Verilated::traceEverOn(true);
 
         tfp = new VerilatedVcdC;
@@ -133,18 +142,24 @@ int main(int argc, char** argv)
         std::string vcdname = argv[0];
         vcdname += ".vcd";
         std::cout << vcdname << std::endl;
+		// open file
         tfp->open(vcdname.c_str());
     }
 
+	// init the clk
     uut->clk = 0;
     uut->eval();
 
+	// two run variables to loop the right way thru the tests
 	long run = 0;
 	long lrun = 0;
 
     while (!Verilated::gotFinish())
     {
+		// first run?
 		if (run == 0 && !uut->clk) {
+			// if yes init data
+			// lrun chooses in this case between add and mul
 			initData(tcs, lrun);
 //			for (int i = 0; i < TESTCASES; i++)
 //				std::cout << tcs[i].a << " " << tcs[i].b << std::endl;
@@ -152,6 +167,7 @@ int main(int argc, char** argv)
 		}
 
 
+		// dump the data into the vcd
 		dump(tfp);
 
 
@@ -171,9 +187,11 @@ int main(int argc, char** argv)
 
         main_time++;            // Time passes...
 
+		// checks to end the simulation
 		if (run >= TESTCASES && lrun >= TESTOTAL-1)
 			break;
 		else if (run >= TESTCASES) {
+			// make a nice empty line
 			std::cout << "\r\n";
 			lrun++;
 			run=0;
@@ -182,6 +200,7 @@ int main(int argc, char** argv)
 
     uut->final();               // Done simulating
 
+	// close vcd file if open
     if (tfp != NULL)
     {
         tfp->close();
@@ -194,6 +213,7 @@ int main(int argc, char** argv)
 }
 
 
+// inlined dump function for the vcd
 inline void dump(VerilatedVcdC* tfp) {
 
 	if (tfp != NULL)
