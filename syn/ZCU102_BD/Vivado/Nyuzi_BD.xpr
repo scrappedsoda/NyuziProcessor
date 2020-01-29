@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="35" Path="/home/markus/Documents/gpu-soc-lab-ws2017/syn/ZCU102_BD/Vivado/Nyuzi_BD.xpr">
+<Project Version="7" Minor="35" Path="/home/glinsi/git/tmp/NyuziProcessor/syn/ZCU102_BD/Vivado/Nyuzi_BD.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="2569b025f40f46d28301cf909d3e9a8f"/>
@@ -24,6 +24,7 @@
     <Option Name="IPRepoPath" Val="$PPRDIR/../../../ip/Nyuzi_1.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../../ip/AXI_VGA_CONTROLLER_1.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../../ip/AXI_to_ROM_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../ip/snes_1.0"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPCachePermission" Val="read"/>
     <Option Name="IPCachePermission" Val="write"/>
@@ -42,13 +43,13 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="1"/>
-    <Option Name="WTModelSimExportSim" Val="1"/>
-    <Option Name="WTQuestaExportSim" Val="1"/>
-    <Option Name="WTIesExportSim" Val="1"/>
-    <Option Name="WTVcsExportSim" Val="1"/>
-    <Option Name="WTRivieraExportSim" Val="1"/>
-    <Option Name="WTActivehdlExportSim" Val="1"/>
+    <Option Name="WTXSimExportSim" Val="2"/>
+    <Option Name="WTModelSimExportSim" Val="2"/>
+    <Option Name="WTQuestaExportSim" Val="2"/>
+    <Option Name="WTIesExportSim" Val="2"/>
+    <Option Name="WTVcsExportSim" Val="2"/>
+    <Option Name="WTRivieraExportSim" Val="2"/>
+    <Option Name="WTActivehdlExportSim" Val="2"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -65,6 +66,135 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_Nyuzi_UART_0/GPU_BD_Nyuzi_UART_0.xci">
+          <Proxy FileSetName="GPU_BD_Nyuzi_UART_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_AXI_GPIO_1_0/GPU_BD_AXI_GPIO_1_0.xci">
+          <Proxy FileSetName="GPU_BD_AXI_GPIO_1_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_global_OR_ddr4_reset_0/GPU_BD_global_OR_ddr4_reset_0.xci">
+          <Proxy FileSetName="GPU_BD_global_OR_ddr4_reset_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_BOOTROM_0/GPU_BD_BOOTROM_0.xci">
+          <Proxy FileSetName="GPU_BD_BOOTROM_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_NYUZI_0/GPU_BD_NYUZI_0.xci">
+          <Proxy FileSetName="GPU_BD_NYUZI_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_VGA_Controller_0/GPU_BD_VGA_Controller_0.xci">
+          <Proxy FileSetName="GPU_BD_VGA_Controller_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_VGA_reset_0/GPU_BD_VGA_reset_0.xci">
+          <Proxy FileSetName="GPU_BD_VGA_reset_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_NYUZI_reset_0/GPU_BD_NYUZI_reset_0.xci">
+          <Proxy FileSetName="GPU_BD_NYUZI_reset_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_AXI_GPIO_0_0/GPU_BD_AXI_GPIO_0_0.xci">
+          <Proxy FileSetName="GPU_BD_AXI_GPIO_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_get_NYUZI_0/GPU_BD_get_NYUZI_0.xci">
+          <Proxy FileSetName="GPU_BD_get_NYUZI_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_global_OR_VGA_reset_0/GPU_BD_global_OR_VGA_reset_0.xci">
+          <Proxy FileSetName="GPU_BD_global_OR_VGA_reset_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_get_DDR4_0/GPU_BD_get_DDR4_0.xci">
+          <Proxy FileSetName="GPU_BD_get_DDR4_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_AXI_GPIO_2_0/GPU_BD_AXI_GPIO_2_0.xci">
+          <Proxy FileSetName="GPU_BD_AXI_GPIO_2_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_auto_us_0/GPU_BD_auto_us_0.xci">
+          <Proxy FileSetName="GPU_BD_auto_us_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_DDR4_reset_0/GPU_BD_DDR4_reset_0.xci">
+          <Proxy FileSetName="GPU_BD_DDR4_reset_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_ZYNQ_0/GPU_BD_ZYNQ_0.xci">
+          <Proxy FileSetName="GPU_BD_ZYNQ_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_auto_cc_2/GPU_BD_auto_cc_2.xci">
+          <Proxy FileSetName="GPU_BD_auto_cc_2"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_DDR4_Controller_0/GPU_BD_DDR4_Controller_0.xci">
+          <Proxy FileSetName="GPU_BD_DDR4_Controller_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_global_OR_AXI_reset_0/GPU_BD_global_OR_AXI_reset_0.xci">
+          <Proxy FileSetName="GPU_BD_global_OR_AXI_reset_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_AXI_LITE_reset_0/GPU_BD_AXI_LITE_reset_0.xci">
+          <Proxy FileSetName="GPU_BD_AXI_LITE_reset_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_global_OR_NYUZI_reset_0/GPU_BD_global_OR_NYUZI_reset_0.xci">
+          <Proxy FileSetName="GPU_BD_global_OR_NYUZI_reset_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_SYSTEM_reset_0/GPU_BD_SYSTEM_reset_0.xci">
+          <Proxy FileSetName="GPU_BD_SYSTEM_reset_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_SYSTEM_AXI_reset_0/GPU_BD_SYSTEM_AXI_reset_0.xci">
+          <Proxy FileSetName="GPU_BD_SYSTEM_AXI_reset_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_global_OR_Interconnect_reset_0/GPU_BD_global_OR_Interconnect_reset_0.xci">
+          <Proxy FileSetName="GPU_BD_global_OR_Interconnect_reset_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_get_VGA_0/GPU_BD_get_VGA_0.xci">
+          <Proxy FileSetName="GPU_BD_get_VGA_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_get_AXI_0/GPU_BD_get_AXI_0.xci">
+          <Proxy FileSetName="GPU_BD_get_AXI_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_Interconnect_reset_0/GPU_BD_Interconnect_reset_0.xci">
+          <Proxy FileSetName="GPU_BD_Interconnect_reset_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_get_Interconnect_0/GPU_BD_get_Interconnect_0.xci">
+          <Proxy FileSetName="GPU_BD_get_Interconnect_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_snes_0_0/GPU_BD_snes_0_0.xci">
+          <Proxy FileSetName="GPU_BD_snes_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_xlconcat_0_0/GPU_BD_xlconcat_0_0.xci">
+          <Proxy FileSetName="GPU_BD_xlconcat_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_xbar_2/GPU_BD_xbar_2.xci">
+          <Proxy FileSetName="GPU_BD_xbar_2"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_xbar_1/GPU_BD_xbar_1.xci">
+          <Proxy FileSetName="GPU_BD_xbar_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_xbar_0/GPU_BD_xbar_0.xci">
+          <Proxy FileSetName="GPU_BD_xbar_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_auto_pc_0/GPU_BD_auto_pc_0.xci">
+          <Proxy FileSetName="GPU_BD_auto_pc_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_auto_us_1/GPU_BD_auto_us_1.xci">
+          <Proxy FileSetName="GPU_BD_auto_us_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_auto_cc_0/GPU_BD_auto_cc_0.xci">
+          <Proxy FileSetName="GPU_BD_auto_cc_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_auto_ds_0/GPU_BD_auto_ds_0.xci">
+          <Proxy FileSetName="GPU_BD_auto_ds_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_auto_cc_3/GPU_BD_auto_cc_3.xci">
+          <Proxy FileSetName="GPU_BD_auto_cc_3"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_s01_mmu_0/GPU_BD_s01_mmu_0.xci">
+          <Proxy FileSetName="GPU_BD_s01_mmu_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_auto_cc_4/GPU_BD_auto_cc_4.xci">
+          <Proxy FileSetName="GPU_BD_auto_cc_4"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_auto_pc_1/GPU_BD_auto_pc_1.xci">
+          <Proxy FileSetName="GPU_BD_auto_pc_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_auto_cc_1/GPU_BD_auto_cc_1.xci">
+          <Proxy FileSetName="GPU_BD_auto_cc_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="GPU_BD.bd" FileRelPathName="ip/GPU_BD_auto_ds_1/GPU_BD_auto_ds_1.xci">
+          <Proxy FileSetName="GPU_BD_auto_ds_1"/>
+        </CompFileExtendedInfo>
       </File>
       <File Path="$PPRDIR/../../../ip/ZCU102_BD/GPU_BD/hdl/GPU_BD_wrapper.v">
         <FileInfo>
@@ -109,21 +239,27 @@
         <Option Name="SrcSet" Val="sources_1"/>
       </Config>
     </FileSet>
+    <FileSet Name="GPU_BD_Nyuzi_UART_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_Nyuzi_UART_0">
+      <Config>
+        <Option Name="TopModule" Val="GPU_BD_Nyuzi_UART_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
     <FileSet Name="GPU_BD_AXI_GPIO_1_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_AXI_GPIO_1_0">
       <Config>
         <Option Name="TopModule" Val="GPU_BD_AXI_GPIO_1_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="GPU_BD_xbar_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_xbar_1">
+    <FileSet Name="GPU_BD_global_OR_ddr4_reset_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_global_OR_ddr4_reset_0">
       <Config>
-        <Option Name="TopModule" Val="GPU_BD_xbar_1"/>
+        <Option Name="TopModule" Val="GPU_BD_global_OR_ddr4_reset_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="GPU_BD_ZYNQ_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_ZYNQ_0">
+    <FileSet Name="GPU_BD_BOOTROM_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_BOOTROM_0">
       <Config>
-        <Option Name="TopModule" Val="GPU_BD_ZYNQ_0"/>
+        <Option Name="TopModule" Val="GPU_BD_BOOTROM_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -139,21 +275,15 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="GPU_BD_NYUZI_reset_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_NYUZI_reset_0">
-      <Config>
-        <Option Name="TopModule" Val="GPU_BD_NYUZI_reset_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="GPU_BD_VGA_reset_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_VGA_reset_0">
       <Config>
         <Option Name="TopModule" Val="GPU_BD_VGA_reset_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="GPU_BD_BOOTROM_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_BOOTROM_0">
+    <FileSet Name="GPU_BD_NYUZI_reset_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_NYUZI_reset_0">
       <Config>
-        <Option Name="TopModule" Val="GPU_BD_BOOTROM_0"/>
+        <Option Name="TopModule" Val="GPU_BD_NYUZI_reset_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -163,9 +293,33 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
+    <FileSet Name="GPU_BD_get_NYUZI_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_get_NYUZI_0">
+      <Config>
+        <Option Name="TopModule" Val="GPU_BD_get_NYUZI_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="GPU_BD_global_OR_VGA_reset_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_global_OR_VGA_reset_0">
+      <Config>
+        <Option Name="TopModule" Val="GPU_BD_global_OR_VGA_reset_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="GPU_BD_get_DDR4_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_get_DDR4_0">
+      <Config>
+        <Option Name="TopModule" Val="GPU_BD_get_DDR4_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
     <FileSet Name="GPU_BD_AXI_GPIO_2_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_AXI_GPIO_2_0">
       <Config>
         <Option Name="TopModule" Val="GPU_BD_AXI_GPIO_2_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="GPU_BD_auto_us_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_auto_us_0">
+      <Config>
+        <Option Name="TopModule" Val="GPU_BD_auto_us_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -175,9 +329,15 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="GPU_BD_xbar_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_xbar_0">
+    <FileSet Name="GPU_BD_ZYNQ_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_ZYNQ_0">
       <Config>
-        <Option Name="TopModule" Val="GPU_BD_xbar_0"/>
+        <Option Name="TopModule" Val="GPU_BD_ZYNQ_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="GPU_BD_auto_cc_2" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_auto_cc_2">
+      <Config>
+        <Option Name="TopModule" Val="GPU_BD_auto_cc_2"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -187,21 +347,39 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="GPU_BD_OR_Gate_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_OR_Gate_1">
+    <FileSet Name="GPU_BD_global_OR_AXI_reset_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_global_OR_AXI_reset_0">
       <Config>
-        <Option Name="TopModule" Val="GPU_BD_OR_Gate_1"/>
+        <Option Name="TopModule" Val="GPU_BD_global_OR_AXI_reset_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="GPU_BD_SYSTEM_reset_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_SYSTEM_reset_1">
+    <FileSet Name="GPU_BD_AXI_LITE_reset_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_AXI_LITE_reset_0">
       <Config>
-        <Option Name="TopModule" Val="GPU_BD_SYSTEM_reset_1"/>
+        <Option Name="TopModule" Val="GPU_BD_AXI_LITE_reset_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="GPU_BD_NYUZI_reset_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_NYUZI_reset_1">
+    <FileSet Name="GPU_BD_global_OR_NYUZI_reset_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_global_OR_NYUZI_reset_0">
       <Config>
-        <Option Name="TopModule" Val="GPU_BD_NYUZI_reset_1"/>
+        <Option Name="TopModule" Val="GPU_BD_global_OR_NYUZI_reset_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="GPU_BD_SYSTEM_reset_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_SYSTEM_reset_0">
+      <Config>
+        <Option Name="TopModule" Val="GPU_BD_SYSTEM_reset_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="GPU_BD_SYSTEM_AXI_reset_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_SYSTEM_AXI_reset_0">
+      <Config>
+        <Option Name="TopModule" Val="GPU_BD_SYSTEM_AXI_reset_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="GPU_BD_global_OR_Interconnect_reset_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_global_OR_Interconnect_reset_0">
+      <Config>
+        <Option Name="TopModule" Val="GPU_BD_global_OR_Interconnect_reset_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -211,21 +389,33 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="GPU_BD_get_NYUZI_2" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_get_NYUZI_2">
+    <FileSet Name="GPU_BD_get_AXI_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_get_AXI_0">
       <Config>
-        <Option Name="TopModule" Val="GPU_BD_get_NYUZI_2"/>
+        <Option Name="TopModule" Val="GPU_BD_get_AXI_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="GPU_BD_get_NYUZI_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_get_NYUZI_1">
+    <FileSet Name="GPU_BD_Interconnect_reset_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_Interconnect_reset_0">
       <Config>
-        <Option Name="TopModule" Val="GPU_BD_get_NYUZI_1"/>
+        <Option Name="TopModule" Val="GPU_BD_Interconnect_reset_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="GPU_BD_xlslice_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_xlslice_0_0">
+    <FileSet Name="GPU_BD_get_Interconnect_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_get_Interconnect_0">
       <Config>
-        <Option Name="TopModule" Val="GPU_BD_xlslice_0_0"/>
+        <Option Name="TopModule" Val="GPU_BD_get_Interconnect_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="GPU_BD_snes_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_snes_0_0">
+      <Config>
+        <Option Name="TopModule" Val="GPU_BD_snes_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="GPU_BD_xlconcat_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_xlconcat_0_0">
+      <Config>
+        <Option Name="TopModule" Val="GPU_BD_xlconcat_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -235,9 +425,75 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="GPU_BD_get_VGA_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_get_VGA_1">
+    <FileSet Name="GPU_BD_xbar_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_xbar_1">
       <Config>
-        <Option Name="TopModule" Val="GPU_BD_get_VGA_1"/>
+        <Option Name="TopModule" Val="GPU_BD_xbar_1"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="GPU_BD_xbar_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_xbar_0">
+      <Config>
+        <Option Name="TopModule" Val="GPU_BD_xbar_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="GPU_BD_auto_pc_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_auto_pc_0">
+      <Config>
+        <Option Name="TopModule" Val="GPU_BD_auto_pc_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="GPU_BD_auto_us_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_auto_us_1">
+      <Config>
+        <Option Name="TopModule" Val="GPU_BD_auto_us_1"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="GPU_BD_auto_cc_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_auto_cc_0">
+      <Config>
+        <Option Name="TopModule" Val="GPU_BD_auto_cc_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="GPU_BD_auto_ds_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_auto_ds_0">
+      <Config>
+        <Option Name="TopModule" Val="GPU_BD_auto_ds_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="GPU_BD_auto_cc_3" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_auto_cc_3">
+      <Config>
+        <Option Name="TopModule" Val="GPU_BD_auto_cc_3"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="GPU_BD_s01_mmu_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_s01_mmu_0">
+      <Config>
+        <Option Name="TopModule" Val="GPU_BD_s01_mmu_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="GPU_BD_auto_cc_4" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_auto_cc_4">
+      <Config>
+        <Option Name="TopModule" Val="GPU_BD_auto_cc_4"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="GPU_BD_auto_pc_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_auto_pc_1">
+      <Config>
+        <Option Name="TopModule" Val="GPU_BD_auto_pc_1"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="GPU_BD_auto_cc_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_auto_cc_1">
+      <Config>
+        <Option Name="TopModule" Val="GPU_BD_auto_cc_1"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="GPU_BD_auto_ds_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/GPU_BD_auto_ds_1">
+      <Config>
+        <Option Name="TopModule" Val="GPU_BD_auto_ds_1"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -264,198 +520,496 @@
     </Simulator>
   </Simulators>
   <Runs Version="1" Minor="10">
-    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="constrs_1" Description="Higher performance designs, resource sharing is turned off, the global fanout guide is set to a lower number, FSM extraction forced to one-hot, LUT combining is disabled, equivalent registers are preserved, SRL are inferred  with a larger threshold" WriteIncrSynthDcp="false" State="current" IncludeInArchive="true">
+    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="constrs_1" Description="Higher performance designs, resource sharing is turned off, the global fanout guide is set to a lower number, FSM extraction forced to one-hot, LUT combining is disabled, equivalent registers are preserved, SRL are inferred  with a larger threshold" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Flow_PerfOptimized_high" Flow="Vivado Synthesis 2017"/>
         <Step Id="synth_design">
-          <Option Id="ShregMinSize">5</Option>
           <Option Id="ResourceSharing">2</Option>
+          <Option Id="ShregMinSize">5</Option>
           <Option Id="RepFanoutThreshold">400</Option>
           <Option Id="NoCombineLuts">1</Option>
-          <Option Id="FsmExtraction">1</Option>
           <Option Id="KeepEquivalentRegisters">1</Option>
+          <Option Id="FsmExtraction">1</Option>
         </Step>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="GPU_BD_AXI_GPIO_1_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_AXI_GPIO_1_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_AXI_GPIO_1_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
+    <Run Id="GPU_BD_Nyuzi_UART_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_Nyuzi_UART_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_Nyuzi_UART_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_Nyuzi_UART_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="GPU_BD_xbar_1_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_xbar_1" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_xbar_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
+    <Run Id="GPU_BD_AXI_GPIO_1_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_AXI_GPIO_1_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_AXI_GPIO_1_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_AXI_GPIO_1_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="GPU_BD_ZYNQ_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_ZYNQ_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_ZYNQ_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
+    <Run Id="GPU_BD_global_OR_ddr4_reset_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_global_OR_ddr4_reset_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_global_OR_ddr4_reset_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_global_OR_ddr4_reset_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="GPU_BD_NYUZI_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_NYUZI_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_NYUZI_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
+    <Run Id="GPU_BD_BOOTROM_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_BOOTROM_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_BOOTROM_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_BOOTROM_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="GPU_BD_VGA_Controller_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_VGA_Controller_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_VGA_Controller_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
+    <Run Id="GPU_BD_NYUZI_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_NYUZI_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_NYUZI_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_NYUZI_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="GPU_BD_NYUZI_reset_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_NYUZI_reset_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_NYUZI_reset_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
+    <Run Id="GPU_BD_VGA_Controller_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_VGA_Controller_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_VGA_Controller_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_VGA_Controller_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="GPU_BD_VGA_reset_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_VGA_reset_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_VGA_reset_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
+    <Run Id="GPU_BD_VGA_reset_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_VGA_reset_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_VGA_reset_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_VGA_reset_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="GPU_BD_BOOTROM_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_BOOTROM_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_BOOTROM_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
+    <Run Id="GPU_BD_NYUZI_reset_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_NYUZI_reset_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_NYUZI_reset_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_NYUZI_reset_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="GPU_BD_AXI_GPIO_0_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_AXI_GPIO_0_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_AXI_GPIO_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
+    <Run Id="GPU_BD_AXI_GPIO_0_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_AXI_GPIO_0_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_AXI_GPIO_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_AXI_GPIO_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="GPU_BD_AXI_GPIO_2_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_AXI_GPIO_2_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_AXI_GPIO_2_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
+    <Run Id="GPU_BD_get_NYUZI_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_get_NYUZI_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_get_NYUZI_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_get_NYUZI_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="GPU_BD_DDR4_reset_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_DDR4_reset_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_DDR4_reset_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
+    <Run Id="GPU_BD_global_OR_VGA_reset_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_global_OR_VGA_reset_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_global_OR_VGA_reset_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_global_OR_VGA_reset_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="GPU_BD_xbar_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_xbar_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_xbar_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
+    <Run Id="GPU_BD_get_DDR4_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_get_DDR4_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_get_DDR4_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_get_DDR4_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="GPU_BD_DDR4_Controller_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_DDR4_Controller_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_DDR4_Controller_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
+    <Run Id="GPU_BD_AXI_GPIO_2_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_AXI_GPIO_2_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_AXI_GPIO_2_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_AXI_GPIO_2_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="GPU_BD_OR_Gate_1_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_OR_Gate_1" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_OR_Gate_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
+    <Run Id="GPU_BD_auto_us_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_auto_us_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_auto_us_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_auto_us_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="GPU_BD_SYSTEM_reset_1_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_SYSTEM_reset_1" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_SYSTEM_reset_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
+    <Run Id="GPU_BD_DDR4_reset_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_DDR4_reset_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_DDR4_reset_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_DDR4_reset_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="GPU_BD_NYUZI_reset_1_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_NYUZI_reset_1" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_NYUZI_reset_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
+    <Run Id="GPU_BD_ZYNQ_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_ZYNQ_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_ZYNQ_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_ZYNQ_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="GPU_BD_get_VGA_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_get_VGA_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_get_VGA_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
+    <Run Id="GPU_BD_auto_cc_2_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_auto_cc_2" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_auto_cc_2" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_auto_cc_2_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="GPU_BD_get_NYUZI_2_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_get_NYUZI_2" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_get_NYUZI_2" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
+    <Run Id="GPU_BD_DDR4_Controller_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_DDR4_Controller_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_DDR4_Controller_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_DDR4_Controller_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="GPU_BD_get_NYUZI_1_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_get_NYUZI_1" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_get_NYUZI_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
+    <Run Id="GPU_BD_global_OR_AXI_reset_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_global_OR_AXI_reset_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_global_OR_AXI_reset_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_global_OR_AXI_reset_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="GPU_BD_xlslice_0_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_xlslice_0_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_xlslice_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
+    <Run Id="GPU_BD_AXI_LITE_reset_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_AXI_LITE_reset_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_AXI_LITE_reset_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_AXI_LITE_reset_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="GPU_BD_xbar_2_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_xbar_2" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_xbar_2" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
+    <Run Id="GPU_BD_global_OR_NYUZI_reset_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_global_OR_NYUZI_reset_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_global_OR_NYUZI_reset_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_global_OR_NYUZI_reset_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="GPU_BD_get_VGA_1_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_get_VGA_1" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_get_VGA_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
+    <Run Id="GPU_BD_SYSTEM_reset_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_SYSTEM_reset_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_SYSTEM_reset_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_SYSTEM_reset_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="constrs_1" Description="Includes alternate algorithms for timing-driven optimization" WriteIncrSynthDcp="false" State="current" SynthRun="synth_1" IncludeInArchive="true">
+    <Run Id="GPU_BD_SYSTEM_AXI_reset_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_SYSTEM_AXI_reset_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_SYSTEM_AXI_reset_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_SYSTEM_AXI_reset_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_global_OR_Interconnect_reset_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_global_OR_Interconnect_reset_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_global_OR_Interconnect_reset_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_global_OR_Interconnect_reset_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_get_VGA_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_get_VGA_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_get_VGA_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_get_VGA_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_get_AXI_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_get_AXI_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_get_AXI_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_get_AXI_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_Interconnect_reset_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_Interconnect_reset_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_Interconnect_reset_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_Interconnect_reset_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_get_Interconnect_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_get_Interconnect_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_get_Interconnect_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_get_Interconnect_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_snes_0_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_snes_0_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_snes_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_snes_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_xlconcat_0_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_xlconcat_0_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_xlconcat_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_xlconcat_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_xbar_2_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_xbar_2" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_xbar_2" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_xbar_2_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_xbar_1_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_xbar_1" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_xbar_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_xbar_1_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_xbar_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_xbar_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_xbar_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_xbar_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_auto_pc_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_auto_pc_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_auto_pc_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_auto_pc_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_auto_us_1_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_auto_us_1" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_auto_us_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_auto_us_1_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_auto_cc_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_auto_cc_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_auto_cc_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_auto_cc_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_auto_ds_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_auto_ds_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_auto_ds_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_auto_ds_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_auto_cc_3_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_auto_cc_3" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_auto_cc_3" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_auto_cc_3_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_s01_mmu_0_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_s01_mmu_0" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_s01_mmu_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_s01_mmu_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_auto_cc_4_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_auto_cc_4" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_auto_cc_4" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_auto_cc_4_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_auto_pc_1_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_auto_pc_1" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_auto_pc_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_auto_pc_1_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_auto_cc_1_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_auto_cc_1" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_auto_cc_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_auto_cc_1_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_auto_ds_1_synth_1" Type="Ft3:Synth" SrcSet="GPU_BD_auto_ds_1" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_auto_ds_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/GPU_BD_auto_ds_1_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="constrs_1" Description="Includes alternate algorithms for timing-driven optimization" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Performance_ExtraTimingOpt" Flow="Vivado Implementation 2017"/>
         <Step Id="init_design"/>
@@ -474,12 +1028,33 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_Nyuzi_UART_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_Nyuzi_UART_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_Nyuzi_UART_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
     <Run Id="GPU_BD_AXI_GPIO_1_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_AXI_GPIO_1_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_AXI_GPIO_1_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -493,89 +1068,11 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="GPU_BD_xbar_1_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_xbar_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_xbar_1_synth_1" IncludeInArchive="false">
+    <Run Id="GPU_BD_global_OR_ddr4_reset_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_global_OR_ddr4_reset_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_global_OR_ddr4_reset_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="GPU_BD_ZYNQ_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_ZYNQ_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_ZYNQ_0_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="GPU_BD_NYUZI_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_NYUZI_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_NYUZI_0_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="GPU_BD_VGA_Controller_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_VGA_Controller_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_VGA_Controller_0_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="GPU_BD_NYUZI_reset_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_NYUZI_reset_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_NYUZI_reset_0_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="GPU_BD_VGA_reset_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_VGA_reset_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_VGA_reset_0_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -591,7 +1088,81 @@
     </Run>
     <Run Id="GPU_BD_BOOTROM_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_BOOTROM_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_BOOTROM_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_NYUZI_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_NYUZI_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_NYUZI_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_VGA_Controller_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_VGA_Controller_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_VGA_Controller_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_VGA_reset_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_VGA_reset_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_VGA_reset_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_NYUZI_reset_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_NYUZI_reset_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_NYUZI_reset_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -607,7 +1178,63 @@
     </Run>
     <Run Id="GPU_BD_AXI_GPIO_0_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_AXI_GPIO_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_AXI_GPIO_0_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_get_NYUZI_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_get_NYUZI_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_get_NYUZI_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_global_OR_VGA_reset_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_global_OR_VGA_reset_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_global_OR_VGA_reset_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_get_DDR4_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_get_DDR4_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_get_DDR4_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -623,7 +1250,27 @@
     </Run>
     <Run Id="GPU_BD_AXI_GPIO_2_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_AXI_GPIO_2_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_AXI_GPIO_2_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_auto_us_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_auto_us_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_auto_us_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -639,7 +1286,9 @@
     </Run>
     <Run Id="GPU_BD_DDR4_reset_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_DDR4_reset_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_DDR4_reset_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -653,9 +1302,29 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="GPU_BD_xbar_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_xbar_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_xbar_0_synth_1" IncludeInArchive="false">
+    <Run Id="GPU_BD_ZYNQ_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_ZYNQ_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_ZYNQ_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_auto_cc_2_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_auto_cc_2" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_auto_cc_2_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -671,7 +1340,9 @@
     </Run>
     <Run Id="GPU_BD_DDR4_Controller_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_DDR4_Controller_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_DDR4_Controller_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -685,9 +1356,11 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="GPU_BD_OR_Gate_1_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_OR_Gate_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_OR_Gate_1_synth_1" IncludeInArchive="false">
+    <Run Id="GPU_BD_global_OR_AXI_reset_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_global_OR_AXI_reset_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_global_OR_AXI_reset_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -701,9 +1374,11 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="GPU_BD_SYSTEM_reset_1_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_SYSTEM_reset_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_SYSTEM_reset_1_synth_1" IncludeInArchive="false">
+    <Run Id="GPU_BD_AXI_LITE_reset_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_AXI_LITE_reset_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_AXI_LITE_reset_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -717,9 +1392,65 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="GPU_BD_NYUZI_reset_1_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_NYUZI_reset_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_NYUZI_reset_1_synth_1" IncludeInArchive="false">
+    <Run Id="GPU_BD_global_OR_NYUZI_reset_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_global_OR_NYUZI_reset_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_global_OR_NYUZI_reset_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_SYSTEM_reset_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_SYSTEM_reset_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_SYSTEM_reset_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_SYSTEM_AXI_reset_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_SYSTEM_AXI_reset_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_SYSTEM_AXI_reset_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_global_OR_Interconnect_reset_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_global_OR_Interconnect_reset_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_global_OR_Interconnect_reset_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -735,7 +1466,9 @@
     </Run>
     <Run Id="GPU_BD_get_VGA_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_get_VGA_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_get_VGA_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -749,9 +1482,11 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="GPU_BD_get_NYUZI_2_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_get_NYUZI_2" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_get_NYUZI_2_synth_1" IncludeInArchive="false">
+    <Run Id="GPU_BD_get_AXI_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_get_AXI_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_get_AXI_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -765,9 +1500,11 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="GPU_BD_get_NYUZI_1_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_get_NYUZI_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_get_NYUZI_1_synth_1" IncludeInArchive="false">
+    <Run Id="GPU_BD_Interconnect_reset_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_Interconnect_reset_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_Interconnect_reset_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -781,9 +1518,47 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="GPU_BD_xlslice_0_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_xlslice_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_xlslice_0_0_synth_1" IncludeInArchive="false">
+    <Run Id="GPU_BD_get_Interconnect_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_get_Interconnect_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_get_Interconnect_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_snes_0_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_snes_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_snes_0_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_xlconcat_0_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_xlconcat_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_xlconcat_0_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -799,7 +1574,9 @@
     </Run>
     <Run Id="GPU_BD_xbar_2_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_xbar_2" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_xbar_2_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -813,9 +1590,209 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="GPU_BD_get_VGA_1_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_get_VGA_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_get_VGA_1_synth_1" IncludeInArchive="false">
+    <Run Id="GPU_BD_xbar_1_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_xbar_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_xbar_1_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_xbar_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_xbar_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_xbar_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_auto_pc_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_auto_pc_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_auto_pc_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_auto_us_1_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_auto_us_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_auto_us_1_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_auto_cc_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_auto_cc_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_auto_cc_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_auto_ds_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_auto_ds_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_auto_ds_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_auto_cc_3_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_auto_cc_3" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_auto_cc_3_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_s01_mmu_0_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_s01_mmu_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_s01_mmu_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_auto_cc_4_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_auto_cc_4" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_auto_cc_4_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_auto_pc_1_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_auto_pc_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_auto_pc_1_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_auto_cc_1_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_auto_cc_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_auto_cc_1_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="GPU_BD_auto_ds_1_impl_1" Type="Ft2:EntireDesign" Part="xczu9eg-ffvb1156-2-e" ConstrsSet="GPU_BD_auto_ds_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="GPU_BD_auto_ds_1_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

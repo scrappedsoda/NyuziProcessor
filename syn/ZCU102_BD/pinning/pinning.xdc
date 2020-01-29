@@ -230,3 +230,15 @@ set_property PACKAGE_PIN E13     [get_ports UART_rxd]
 set_property IOSTANDARD LVCMOS33 [get_ports UART_rxd]
 set_property PACKAGE_PIN F13     [get_ports UART_txd]
 set_property IOSTANDARD LVCMOS33 [get_ports UART_txd]
+
+#SNES Controller on Prototype Header
+
+# snes_data  ... pin  6
+# snes_latch ... pin  8
+# snes_clk   ... pin 10
+set_property PACKAGE_PIN H14      [get_ports {snes_data}]  
+set_property IOSTANDARD  LVCMOS33  [get_ports {snes_data}]  
+set_property PACKAGE_PIN J14      [get_ports {snes_latch}]  
+set_property IOSTANDARD  LVCMOS33  [get_ports {snes_latch}]  
+set_property PACKAGE_PIN G14      [get_ports {snes_clk}]  
+set_property IOSTANDARD  LVCMOS33  [get_ports {snes_clk}]  

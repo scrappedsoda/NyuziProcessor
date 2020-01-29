@@ -1,8 +1,8 @@
 //Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
-//Tool Version: Vivado v.2017.4.1 (lin64) Build 2117270 Tue Jan 30 15:31:13 MST 2018
-//Date        : Fri Jun  1 14:00:57 2018
-//Host        : debmarkus running 64-bit Debian GNU/Linux 9.4 (stretch)
+//Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
+//Date        : Sun Jan 26 16:22:09 2020
+//Host        : aglpc running 64-bit Manjaro Linux
 //Command     : generate_target GPU_BD_wrapper.bd
 //Design      : GPU_BD_wrapper
 //Purpose     : IP block netlist
@@ -30,6 +30,9 @@ module GPU_BD_wrapper
     UART_rxd,
     UART_txd,
     reset,
+    snes_clk,
+    snes_data,
+    snes_latch,
     user_si570_sysclk_clk_n,
     user_si570_sysclk_clk_p,
     vga_out_b,
@@ -57,6 +60,9 @@ module GPU_BD_wrapper
   input UART_rxd;
   output UART_txd;
   input reset;
+  output snes_clk;
+  input snes_data;
+  output snes_latch;
   input user_si570_sysclk_clk_n;
   input user_si570_sysclk_clk_p;
   output [3:0]vga_out_b;
@@ -85,6 +91,9 @@ module GPU_BD_wrapper
   wire UART_rxd;
   wire UART_txd;
   wire reset;
+  wire snes_clk;
+  wire snes_data;
+  wire snes_latch;
   wire user_si570_sysclk_clk_n;
   wire user_si570_sysclk_clk_p;
   wire [3:0]vga_out_b;
@@ -114,6 +123,9 @@ module GPU_BD_wrapper
         .UART_rxd(UART_rxd),
         .UART_txd(UART_txd),
         .reset(reset),
+        .snes_clk(snes_clk),
+        .snes_data(snes_data),
+        .snes_latch(snes_latch),
         .user_si570_sysclk_clk_n(user_si570_sysclk_clk_n),
         .user_si570_sysclk_clk_p(user_si570_sysclk_clk_p),
         .vga_out_b(vga_out_b),
