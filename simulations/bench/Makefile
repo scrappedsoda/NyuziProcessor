@@ -1,6 +1,6 @@
 TARGET=simtop
 ADDTARGET=app_add_top
-MULTARGET=approximate_mult_top
+MULTARGET=app_mul_top
 
 .PHONY: $(TARGET) $(ADDTARGET) $(MULTARGET)
 
@@ -18,7 +18,7 @@ $(TARGET):
 	make -C $(COMHDL) -f V$(@).mk
 
 run: $(TARGET)
-	./$(TARGET)/V$(TARGET)
+	./$(COMHDL)/V$(TARGET)
 
 #-------------------------------------------------------------------------------
 
@@ -27,7 +27,7 @@ $(ADDTARGET):
 	make -C $(COMHDL) -f V$(@).mk
 
 run_add: $(ADDTARGET)
-	./$(ADDTARGET)/V$(ADDTARGET)
+	./$(COMHDL)/V$(ADDTARGET)
 ra: run_add
 
 #-------------------------------------------------------------------------------
@@ -37,7 +37,7 @@ $(MULTARGET):
 	make -C $(COMHDL) -f V$(@).mk
 
 run_mul: $(MULTARGET)
-	./$(MULTARGET)/V$(MULTARGET)
+	./$(COMHDL)/V$(MULTARGET)
 rm: run_mul
 
 #-------------------------------------------------------------------------------
