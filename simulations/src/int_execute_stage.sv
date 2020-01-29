@@ -104,22 +104,22 @@ module int_execute_stage(
             assign signed_gtr = overflow == negative;
 
 			// The approximate adder.
-			app_add_top app_add_lane( 
-				.clk (clk),
-				.reset (reset),
+//			app_add_top app_add_lane( 
+			approx_adder #(.APPROX_LV(16)) apr16 ( 
 				.a (lane_operand1),
 				.b (lane_operand2),
-				.of_output_app (app_sum)
+				.sum (app_sum),
+				.c( /* open */)
 			);
 			
 			// The approximate multiplier.
-			app_mul_top app_multiplier(
-				.clk (clk),
-				.reset (reset),
-				.multiplicant (multiplicant),
-				.multiplier (multiplier),
-				.product (product),
-				.sign (mul_sign));
+//			app_mul_top app_multiplier(
+//				.clk (clk),
+//				.reset (reset),
+//				.multiplicant (multiplicant),
+//				.multiplier (multiplier),
+//				.product (product),
+//				.sign (mul_sign));
 			
 			// Array slicing for the multiplier.
 			always_comb
