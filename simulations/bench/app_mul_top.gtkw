@@ -1,0 +1,61 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Wed Jan 29 07:12:22 2020
+[*]
+[dumpfile] "/home/glinsi/git/ApproximateNyuzi/simulations/bench/hdl/Vapp_mul_top.vcd"
+[dumpfile_mtime] "Wed Jan 29 07:07:45 2020"
+[dumpfile_size] 18020
+[savefile] "/home/glinsi/git/ApproximateNyuzi/simulations/bench/app_mul_top.gtkw"
+[timestart] 0
+[size] 1920 1034
+[pos] -968 9
+*-4.073541 5 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] TOP.
+[treeopen] TOP.app_mul_top.
+[sst_width] 231
+[signals_width] 338
+[sst_expanded] 1
+[sst_vpaned_height] 294
+@28
+TOP.clk
+@24
+TOP.a[31:0]
+TOP.b[31:0]
+TOP.of_output_app[31:0]
+@200
+-
+-inside top
+@22
+TOP.app_mul_top.a[31:0]
+TOP.app_mul_top.a_red[15:0]
+TOP.app_mul_top.b[31:0]
+TOP.app_mul_top.b_red[15:0]
+@200
+-
+@24
+TOP.app_mul_top.of_output_app[31:0]
+TOP.app_mul_top.of_output_ori[31:0]
+@28
+TOP.app_mul_top.reset
+TOP.app_mul_top.sign
+@200
+-
+-inside mitchell
+@22
+TOP.app_mul_top.mitchi.characteristic_sum[31:0]
+TOP.app_mul_top.mitchi.frac_multiplicant[31:0]
+@23
+TOP.app_mul_top.mitchi.frac_multiplier[31:0]
+@22
+TOP.app_mul_top.mitchi.fractional_sum[14:0]
+TOP.app_mul_top.mitchi.lod_multiplicant[31:0]
+TOP.app_mul_top.mitchi.lod_multiplier[31:0]
+TOP.app_mul_top.mitchi.multiplicant[15:0]
+TOP.app_mul_top.mitchi.multiplier[15:0]
+TOP.app_mul_top.mitchi.product[31:0]
+@28
+TOP.app_mul_top.mitchi.result_zero_A
+TOP.app_mul_top.mitchi.result_zero_B
+TOP.app_mul_top.mitchi.sign
+[pattern_trace] 1
+[pattern_trace] 0
