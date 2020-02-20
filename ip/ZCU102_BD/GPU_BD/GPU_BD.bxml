@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="33">
   <CompositeFile CompositeFileTopName="GPU_BD" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1580052185"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1580052185"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1580052185"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1580052185"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1560190860"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1560190860"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1560190860"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1560190860"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="synth/GPU_BD.v" Type="Verilog">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
@@ -43,7 +43,6 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip/GPU_BD_AXI_0/GPU_BD_AXI_0.xci" Type="IP">
-        <Instance HierarchyPath="AXI"/>
         <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -91,7 +90,6 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip/GPU_BD_AXI_LITE_0/GPU_BD_AXI_LITE_0.xci" Type="IP">
-        <Instance HierarchyPath="AXI_LITE"/>
         <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -171,7 +169,6 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip/GPU_BD_AXI_NO_RESET_0/GPU_BD_AXI_NO_RESET_0.xci" Type="IP">
-        <Instance HierarchyPath="AXI_NO_RESET"/>
         <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -290,6 +287,22 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
+      <File Name="ip/GPU_BD_snes_0_0/GPU_BD_snes_0_0.xci" Type="IP">
+        <Instance HierarchyPath="snes_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/GPU_BD_xlconcat_0_0/GPU_BD_xlconcat_0_0.xci" Type="IP">
+        <Instance HierarchyPath="xlconcat_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
       <File Name="ip/GPU_BD_auto_ds_1/GPU_BD_auto_ds_1.xci" Type="IP">
         <Instance HierarchyPath="AXI_NO_RESET/s00_couplers/auto_ds"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
@@ -316,14 +329,6 @@
       </File>
       <File Name="ip/GPU_BD_auto_cc_3/GPU_BD_auto_cc_3.xci" Type="IP">
         <Instance HierarchyPath="AXI_LITE/m00_couplers/auto_cc"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/GPU_BD_s01_mmu_0/GPU_BD_s01_mmu_0.xci" Type="IP">
-        <Instance HierarchyPath="AXI/s01_mmu"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>

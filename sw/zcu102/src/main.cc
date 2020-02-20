@@ -337,13 +337,16 @@ int init(void) {
 	    return ret;
 	}
 
-//    log(DEBUG, "[main] Initalizing interrupt routine for snes buttons...\n\r");
-//        status = snes_interrupt_init(&intc2, XPAR_SCUGIC_0_DEVICE_ID, XPAR_FABRIC_SNES_0_BTN_CHANGE_INTR, snes_interrupt_handler);
-//        if (status != XST_SUCCESS) {
-//            log(DEBUG, "[main] Initalizing interrupt routine for snes buttons...failed!\n\r");
-//            ret = XST_FAILURE;
-//            return ret;
-//        }
+	/*
+    log(DEBUG, "[main] Initalizing interrupt routine for snes buttons...\n\r");
+        status = snes_interrupt_init(&intc2, XPAR_SCUGIC_0_DEVICE_ID, XPAR_FABRIC_SNES_0_BTN_CHANGE_INTR, snes_interrupt_handler);
+        if (status != XST_SUCCESS) {
+            log(DEBUG, "[main] Initalizing interrupt routine for snes buttons...failed!\n\r");
+            ret = XST_FAILURE;
+            return ret;
+        }
+	*/
+
     log(DEBUG, "[main] Initializing GPIO reset...\n\r");
     status = XGpio_Initialize(&gpio_reset, XPAR_AXI_GPIO_0_DEVICE_ID);
     if (status != XST_SUCCESS) {
