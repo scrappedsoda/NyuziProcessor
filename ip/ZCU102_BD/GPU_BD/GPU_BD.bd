@@ -666,7 +666,7 @@
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">GPU_BD_BOOTROM_0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="BASE_ADDRESS">0xFFFEE000</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="ROM_ADDR_WIDTH">12</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="ROM_HEX_FILE">/home/glinsi/git/ApproximateNyuzi/sw/nyuzi_sw/software/bootrom/boot.hex</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="ROM_HEX_FILE">/home/johannes/Dokumente/GPU_Project/repo/nyuzi-soc/sw/nyuzi_sw/software/bootrom/boot.hex</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>

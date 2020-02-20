@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="35" Path="/home/glinsi/git/tmp/NyuziProcessor/syn/ZCU102_BD/Vivado/Nyuzi_BD.xpr">
+<Project Version="7" Minor="35" Path="/home/johannes/Dokumente/GPU_Project/repo/nyuzi-soc/syn/ZCU102_BD/Vivado/Nyuzi_BD.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="2569b025f40f46d28301cf909d3e9a8f"/>
