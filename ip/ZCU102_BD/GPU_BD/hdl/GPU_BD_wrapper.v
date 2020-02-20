@@ -1,8 +1,8 @@
 //Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-//Date        : Sun Jan 26 16:22:09 2020
-//Host        : aglpc running 64-bit Manjaro Linux
+//Date        : Mon Jun 10 20:20:57 2019
+//Host        : johannes-HP-ENVY-Notebook running 64-bit Ubuntu 18.04.2 LTS
 //Command     : generate_target GPU_BD_wrapper.bd
 //Design      : GPU_BD_wrapper
 //Purpose     : IP block netlist
