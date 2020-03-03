@@ -1,0 +1,9 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/tmp/vApoyxr/14/fp_execute_stage5.sv" into library work
+ERROR: [VRFC 10-1342] root scope declaration is not allowed in verilog 95/2K mode [defines.svh:22]
+ERROR: [VRFC 10-1342] root scope declaration is not allowed in verilog 95/2K mode [defines.svh:28]
+ERROR: [VRFC 10-1342] root scope declaration is not allowed in verilog 95/2K mode [defines.svh:29]
+ERROR: [VRFC 10-1412] syntax error near packed [defines.svh:32]
+ERROR: [VRFC 10-1342] root scope declaration is not allowed in verilog 95/2K mode [defines.svh:32]
+ERROR: [VRFC 10-1342] root scope declaration is not allowed in verilog 95/2K mode [defines.svh:34]
+ERROR: [VRFC 10-1342] root scope declaration is not allowed in verilog 95/2K mode [defines.svh:35]
+ERROR: [VRFC 10-1412] syntax error near } [defines.svh:36]
