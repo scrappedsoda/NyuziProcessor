@@ -113,6 +113,7 @@ module int_execute_stage(
 				approx_adder #(.APPROX_LV(16)) appr16 (
 				    .a (lane_operand1),
 				    .b (lane_operand1),
+					.add ('1),
 				    .sum (sum),
 				    .c (carry));
 
@@ -208,7 +209,7 @@ module int_execute_stage(
             // Array slicing for the multiplier.
 			always_comb
 			begin
-				case(of_instruction.alu_op)
+				casez(of_instruction.alu_op)
 					OP_MULL_I:
 					begin
 						multiplicant = lane_operand1[15:0];
@@ -226,6 +227,12 @@ module int_execute_stage(
 						multiplicant = lane_operand1[31:16];
 						multiplier = lane_operand2[31:16];
 						mul_sign = 1;
+					end
+					default:
+					begin
+						multiplicant = 16'b0; //lane_operand1[31:16];
+						multiplier = 16'b0; //lane_operand2[31:16];
+						mul_sign = '0;
 					end
 				endcase
 			
