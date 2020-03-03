@@ -1,1 +1,0 @@
-/usr/bin/cc   -rdynamic CMakeFiles/serial_boot.dir/serial_boot.c.o  -o ../../bin/serial_boot 

@@ -1,0 +1,44 @@
+#!/usr/bin/env python3
+#
+# Copyright 2011-2015 Jeff Bush
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+"""Print internal fields of a floating point number.
+
+This is a handy utility when debugging the floating point pipeline.
+"""
+
+import sys
+import struct
+
+
+def dump(value):
+    print(hex(value))
+    print('exponent ' + str((value >> 23) & 0xff))
+    sig = value & ((1 << 23) - 1)
+    print('significand ' + hex(sig) + ' ' + bin(sig)[2:].zfill(23))
+    print(struct.unpack('f', struct.pack('I', value))[0])
+
+def main():
+    strval = sys.argv[1]
+    if strval[:2] == '0x':
+        dump(int(strval[2:], 16))
+    elif strval.find('.') != -1:
+        dump(struct.unpack('I', struct.pack('f', float(strval)))[0])
+    else:
+        dump(int(strval))
+
+if __name__ == '__main__':
+    main()
