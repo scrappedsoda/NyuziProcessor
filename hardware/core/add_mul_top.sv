@@ -115,6 +115,13 @@ module app_mul_top(
             // Final barrel shifter.
             internal_product = fractional_sum_appended;
             internal_product = internal_product << characteristic_sum; 
+            
+            // Handle sign flag.
+            // If signs of multiplier and multiplicant are unequal, the product has to be negative.
+            // Therefore, the already calculated product, has to be negated (this equals to building
+            // a 2-complement). 
+            if(sign && (multiplicant[15] != multiplier[15])) begin
+                internal_product = (~internal_product) + 1'b1; 
+            end
         end
-	
 endmodule
