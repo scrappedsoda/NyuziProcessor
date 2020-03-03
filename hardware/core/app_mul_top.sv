@@ -21,12 +21,12 @@ module app_mul_top(
 	logic [32:0] fractional_sum_appended;
 	
 	logic [94:0] internal_product;
-	logic [46:0] shiftReg_multiplicant_tmp;
+	logic [62:0] shiftReg_multiplicant_tmp;
 	logic [38:0] shiftReg_multiplicant;
-    logic [46:0] shiftReg_multiplier_tmp;
+    logic [62:0] shiftReg_multiplier_tmp;
     logic [38:0] shiftReg_multiplier;
 	
-	const logic [30:0] corr_factor = 30'b000101000000000000000000000000;
+	const logic [30:0] corr_factor = 31'b0001010000000000000000000000000;
 	
 	assign product = internal_product[94:31];
 	

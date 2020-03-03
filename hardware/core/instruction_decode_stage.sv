@@ -385,8 +385,7 @@ module instruction_decode_stage(
             decoded_instr_nxt.pipeline_sel = PIPE_INT_ARITH;
         else if (fmt_r || fmt_i)
         begin
-            if (alu_op[5] || alu_op == OP_MULL_I || alu_op == OP_MULH_U
-                 || alu_op == OP_MULH_I || alu_op == OP_FTOI)
+            if (alu_op[5] || alu_op == OP_FTOI)
                 decoded_instr_nxt.pipeline_sel = PIPE_FLOAT_ARITH;
             else
                 decoded_instr_nxt.pipeline_sel = PIPE_INT_ARITH;

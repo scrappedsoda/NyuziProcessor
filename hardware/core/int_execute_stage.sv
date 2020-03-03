@@ -249,6 +249,11 @@ module int_execute_stage(
                     OP_SHUFFLE,
                     OP_GETLANE: lane_result = of_operand1[~lane_operand2];
                     OP_RECIPROCAL: lane_result = reciprocal;
+                    OP_MULL_I: lane_result = lane_operand1[15:0] * lane_operand2[15:0]; 
+					OP_MULH_U: lane_result = lane_operand1[31:16] * lane_operand2[31:16];
+					OP_MULH_I: begin	   
+					   lane_result = $signed(lane_operand1[31:16]) * $signed(lane_operand2[31:16]);
+					end
                     default: lane_result = 0;
                 endcase
             end
