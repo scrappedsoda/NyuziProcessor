@@ -100,12 +100,21 @@ module fp_execute_stage2(
         for (lane_idx = 0; lane_idx < NUM_VECTOR_LANES; lane_idx++)
         begin : lane_logic_gen
             scalar_t aligned_significand;
+            logic [63:0] product;
+            scalar_t product_higher;
             logic guard;
             logic round;
             logic[24:0] sticky_bits;
             logic sticky;
             logic[63:0] sext_multiplicand;
             logic[63:0] sext_multiplier;
+
+            // Approximate multiplier.
+            app_mul_top lane_mul (
+                .sign (imulhs),
+                .multiplicant (sext_multiplicand[31:0]),
+                .multiplier (sext_multiplier[31:0]),
+                .product (product));
 
             assign {aligned_significand, guard, round, sticky_bits} = {fx1_significand_se[lane_idx], 27'd0} >>
                 fx1_se_align_shift[lane_idx];
@@ -136,7 +145,7 @@ module fp_execute_stage2(
                 fx2_ftoi_lshift[lane_idx] <= fx1_ftoi_lshift[lane_idx];
 
                 // XXX Simple version. Should have a wallace tree here to collect partial products.
-                fx2_significand_product[lane_idx] <= sext_multiplicand * sext_multiplier;
+                fx2_significand_product[lane_idx] <= product;
             end
         end
     endgenerate
