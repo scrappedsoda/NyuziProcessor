@@ -15,6 +15,8 @@
 //
 
 `include "defines.svh"
+`include "app_add_top.sv"
+//`include "app_mul_top.sv"
 
 import defines::*;
 
@@ -80,6 +82,10 @@ module int_execute_stage(
             scalar_t lane_operand2;
             scalar_t lane_result;
             scalar_t difference;
+            scalar_t product;
+            logic mul_sign;
+            logic[15:0] multiplicant;
+            logic[15:0] multiplier;
             logic borrow;
             logic negative;
             logic overflow;
@@ -100,6 +106,13 @@ module int_execute_stage(
             assign overflow = lane_operand2[31] == negative && lane_operand1[31] != lane_operand2[31];
             assign zero = difference == 0;
             assign signed_gtr = overflow == negative;
+
+			// The approximate multiplier.
+			app_mul_top app_multiplier(
+				.multiplicant (multiplicant),
+				.multiplier (multiplier),
+				.product (product),
+				.sign (mul_sign));
 
             // Count leading zeroes
             always_comb
@@ -183,6 +196,32 @@ module int_execute_stage(
                 endcase
             end
 
+            // Array slicing for the multiplier.
+			always_comb
+			begin
+				case(of_instruction.alu_op)
+					OP_MULL_I:
+					begin
+						multiplicant <= lane_operand1[15:0];
+						multiplier <= lane_operand2[15:0];
+						mul_sign <= 0;
+					end
+					OP_MULH_U:
+					begin
+						multiplicant <= lane_operand1[31:16];
+						multiplier <= lane_operand2[31:16];
+						mul_sign <= 0;
+					end
+					OP_MULH_I:
+					begin
+						multiplicant <= lane_operand1[31:16];
+						multiplier <= lane_operand2[31:16];
+						mul_sign <= 1;
+					end
+				endcase
+			
+			end
+
             // Right shift
             assign shift_in_sign = of_instruction.alu_op == OP_ASHR ? lane_operand1[31] : 1'd0;
             assign rshift = scalar_t'({{32{shift_in_sign}}, lane_operand1} >> lane_operand2[4:0]);
@@ -244,6 +283,9 @@ module int_execute_stage(
                     OP_SHUFFLE,
                     OP_GETLANE: lane_result = of_operand1[~lane_operand2];
                     OP_RECIPROCAL: lane_result = reciprocal;
+                    OP_MULL_I: lane_result = product; 
+					OP_MULH_U: lane_result = product;
+					OP_MULH_I: lane_result = product;
                     default: lane_result = 0;
                 endcase
             end

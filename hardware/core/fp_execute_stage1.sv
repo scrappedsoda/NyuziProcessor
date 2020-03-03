@@ -85,8 +85,7 @@ module fp_execute_stage1(
     logic compare;
 
     assign fmul = of_instruction.alu_op == OP_MUL_F;
-    assign imul = of_instruction.alu_op == OP_MULL_I || of_instruction.alu_op == OP_MULH_U
-        || of_instruction.alu_op == OP_MULH_I;
+    assign imul = 0;
     assign ftoi = of_instruction.alu_op == OP_FTOI;
     assign itof = of_instruction.alu_op == OP_ITOF;
     assign compare = of_instruction.alu_op == OP_CMPGT_F
