@@ -18,7 +18,6 @@ module app_mul_top(
 	logic [15:0] fractional_sum_carry;
 	logic [14:0] fractional_sum;
 	logic [15:0] fractional_sum_corr_carry;
-	logic [14:0] fractional_sum_corr;
 	logic [16:0] fractional_sum_appended;
 	
 	logic [47:0] internal_product;
@@ -27,7 +26,7 @@ module app_mul_top(
     logic [30:0] shiftReg_multiplier_tmp;
     logic [22:0] shiftReg_multiplier;
 	
-	const logic [13:0] corr_factor = 14'b00010100000000;
+	const logic [14:0] corr_factor = 15'b000101000000000;
 	
 	assign product = internal_product[47:16];
 	
@@ -95,7 +94,7 @@ module app_mul_top(
 			fractional_sum_carry = frac_multiplicant + frac_multiplier;
 			fractional_sum = fractional_sum_carry[14:0];
 			if(fractional_sum_carry[15]) begin
-			     fractional_sum_corr_carry = {'0,fractional_sum} + ({2'b0,corr_factor} >> 1);
+			     fractional_sum_corr_carry = {'0,fractional_sum} + ({'0,corr_factor} >> 1);
 			     if (fractional_sum_corr_carry[15]) begin
 			         fractional_sum_appended = { 2'b10, fractional_sum_corr_carry[14:0] };
 			     end
@@ -104,7 +103,7 @@ module app_mul_top(
 			     end
 			 end
 			else begin
-			     fractional_sum_corr_carry = {'0,fractional_sum} + {2'b0,corr_factor};
+			     fractional_sum_corr_carry = {'0,fractional_sum} + {'0,corr_factor};
 			     if (fractional_sum_corr_carry[15]) begin
 			         fractional_sum_appended = { 2'b10, fractional_sum_corr_carry[14:0] };
 			     end
@@ -114,7 +113,7 @@ module app_mul_top(
 			end
 			
 	        // Generate sum of characteristic parts.
-			characteristic_sum = {'0,lod_multiplicant} + {'0,lod_multiplier} + {fractional_sum_carry[15],5'b0};
+			characteristic_sum = {'0,lod_multiplicant} + {'0,lod_multiplier} + {4'b0,fractional_sum_carry[15]};
 	
             // Final barrel shifter.
             internal_product = {31'b0,fractional_sum_appended};
