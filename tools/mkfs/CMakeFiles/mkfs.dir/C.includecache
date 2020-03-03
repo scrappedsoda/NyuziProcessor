@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/glinsi/git/ApproximateNyuzi/tools/mkfs/mkfs.c
+sys/stat.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+
