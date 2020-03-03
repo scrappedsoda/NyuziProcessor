@@ -15,7 +15,7 @@
 //
 
 `include "defines.svh"
-`include "app_add_top.sv"
+//`include "app_add_top.sv"
 //`include "app_mul_top.sv"
 
 import defines::*;
@@ -110,7 +110,7 @@ module int_execute_stage(
             assign signed_gtr = overflow == negative;
 
 			// The approximate adder.
-				approx_adder #(.APPROX_LV(16)) (
+				approx_adder #(.APPROX_LV(16)) appr16 (
 				    .a (lane_operand1),
 				    .b (lane_operand1),
 				    .sum (sum),
@@ -211,21 +211,21 @@ module int_execute_stage(
 				case(of_instruction.alu_op)
 					OP_MULL_I:
 					begin
-						multiplicant <= lane_operand1[15:0];
-						multiplier <= lane_operand2[15:0];
-						mul_sign <= 0;
+						multiplicant = lane_operand1[15:0];
+						multiplier = lane_operand2[15:0];
+						mul_sign = 0;
 					end
 					OP_MULH_U:
 					begin
-						multiplicant <= lane_operand1[31:16];
-						multiplier <= lane_operand2[31:16];
-						mul_sign <= 0;
+						multiplicant = lane_operand1[31:16];
+						multiplier = lane_operand2[31:16];
+						mul_sign = 0;
 					end
 					OP_MULH_I:
 					begin
-						multiplicant <= lane_operand1[31:16];
-						multiplier <= lane_operand2[31:16];
-						mul_sign <= 1;
+						multiplicant = lane_operand1[31:16];
+						multiplier = lane_operand2[31:16];
+						mul_sign = 1;
 					end
 				endcase
 			
