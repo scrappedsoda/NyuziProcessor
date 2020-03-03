@@ -1,1 +1,9 @@
 run_*
+*.hex
+*.o
+*.a
+*.bin
+*.cmake
+*.make
+
+CMakeFiles

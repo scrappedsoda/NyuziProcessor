@@ -1,0 +1,418 @@
+
+/home/glinsi/git/NyuziProcessor/software/bootrom/bootrom:	file format ELF32-nyuzi
+
+Disassembly of section .text:
+00000000fffef000 _start:
+fffef000:	00 00 00 ac 	getcr s0, 0
+fffef004:	60 00 00 f4 	bnz s0, 12 <jump_to_zero>
+fffef008:	c0 43 00 4f 	movehi sp, 512
+fffef00c:	b5 00 00 f8 	call 724 <main>
+
+00000000fffef010 jump_to_zero:
+fffef010:	00 00 00 0f 	move s0, 0
+fffef014:	00 00 00 f0 	b s0
+
+00000000fffef018 read_serial_byte:
+fffef018:	18 fc ff 4f 	movehi s0, 524280
+fffef01c:	20 00 01 00 	or s1, s0, 64
+fffef020:	41 00 00 a8 	load_32 s2, (s1)
+fffef024:	42 08 00 01 	and s2, s2, 2
+fffef028:	c2 02 00 f4 	bnz s2, 88 <read_serial_byte+0x68>
+fffef02c:	6c 00 00 4f 	movehi s3, 12
+fffef030:	40 00 00 0f 	move s2, 0
+fffef034:	80 10 00 00 	or s4, s0, 4
+fffef038:	63 84 1a 00 	or s3, s3, 1697
+fffef03c:	a0 00 f1 c0 	move s5, s2
+fffef040:	c0 00 f1 c0 	move s6, s2
+fffef044:	e6 80 41 c1 	cmplt_i s7, s6, s3
+fffef048:	47 00 00 f4 	bnz s7, 8 <read_serial_byte+0x38>
+fffef04c:	06 00 00 f6 	b 24 <read_serial_byte+0x4c>
+fffef050:	c6 04 00 05 	add_i s6, s6, 1
+fffef054:	e1 00 00 a8 	load_32 s7, (s1)
+fffef058:	e7 08 00 01 	and s7, s7, 2
+fffef05c:	47 ff ff f3 	bz s7, -24 <read_serial_byte+0x2c>
+fffef060:	08 00 00 f6 	b 32 <read_serial_byte+0x68>
+fffef064:	a5 00 00 10 	cmpeq_i s5, s5, 0
+fffef068:	a5 04 00 01 	and s5, s5, 1
+fffef06c:	a4 00 00 88 	store_32 s5, (s4)
+fffef070:	c0 00 f1 c0 	move s6, s2
+fffef074:	e1 00 00 a8 	load_32 s7, (s1)
+fffef078:	e7 08 00 01 	and s7, s7, 2
+fffef07c:	47 fe ff f3 	bz s7, -56 <read_serial_byte+0x2c>
+fffef080:	00 10 01 00 	or s0, s0, 68
+fffef084:	00 00 00 a8 	load_32 s0, (s0)
+fffef088:	1f 00 00 f0 	ret
+
+00000000fffef08c write_serial_byte:
+fffef08c:	38 fc ff 4f 	movehi s1, 524280
+fffef090:	41 00 01 00 	or s2, s1, 64
+fffef094:	62 00 00 a8 	load_32 s3, (s2)
+fffef098:	63 04 00 01 	and s3, s3, 1
+fffef09c:	c3 ff ff f3 	bz s3, -8 <write_serial_byte+0x8>
+fffef0a0:	21 20 01 00 	or s1, s1, 72
+fffef0a4:	01 00 00 88 	store_32 s0, (s1)
+fffef0a8:	1f 00 00 f0 	ret
+
+00000000fffef0ac read_serial_long:
+fffef0ac:	38 fc ff 4f 	movehi s1, 524280
+fffef0b0:	01 00 01 00 	or s0, s1, 64
+fffef0b4:	40 00 00 a8 	load_32 s2, (s0)
+fffef0b8:	42 08 00 01 	and s2, s2, 2
+fffef0bc:	c2 02 00 f4 	bnz s2, 88 <read_serial_long+0x68>
+fffef0c0:	6c 00 00 4f 	movehi s3, 12
+fffef0c4:	40 00 00 0f 	move s2, 0
+fffef0c8:	81 10 00 00 	or s4, s1, 4
+fffef0cc:	63 84 1a 00 	or s3, s3, 1697
+fffef0d0:	a0 00 f1 c0 	move s5, s2
+fffef0d4:	c0 00 f1 c0 	move s6, s2
+fffef0d8:	e6 80 41 c1 	cmplt_i s7, s6, s3
+fffef0dc:	47 00 00 f4 	bnz s7, 8 <read_serial_long+0x38>
+fffef0e0:	06 00 00 f6 	b 24 <read_serial_long+0x4c>
+fffef0e4:	c6 04 00 05 	add_i s6, s6, 1
+fffef0e8:	e0 00 00 a8 	load_32 s7, (s0)
+fffef0ec:	e7 08 00 01 	and s7, s7, 2
+fffef0f0:	47 ff ff f3 	bz s7, -24 <read_serial_long+0x2c>
+fffef0f4:	08 00 00 f6 	b 32 <read_serial_long+0x68>
+fffef0f8:	a5 00 00 10 	cmpeq_i s5, s5, 0
+fffef0fc:	a5 04 00 01 	and s5, s5, 1
+fffef100:	a4 00 00 88 	store_32 s5, (s4)
+fffef104:	c0 00 f1 c0 	move s6, s2
+fffef108:	e0 00 00 a8 	load_32 s7, (s0)
+fffef10c:	e7 08 00 01 	and s7, s7, 2
+fffef110:	47 fe ff f3 	bz s7, -56 <read_serial_long+0x2c>
+fffef114:	41 10 01 00 	or s2, s1, 68
+fffef118:	b8 fc 00 4f 	movehi s5, 2040
+fffef11c:	62 00 00 a8 	load_32 s3, (s2)
+fffef120:	80 00 00 a8 	load_32 s4, (s0)
+fffef124:	63 40 00 0b 	shl s3, s3, 16
+fffef128:	84 08 00 01 	and s4, s4, 2
+fffef12c:	63 80 12 c0 	and s3, s3, s5
+fffef130:	c4 02 00 f4 	bnz s4, 88 <read_serial_long+0xdc>
+fffef134:	ac 00 00 4f 	movehi s5, 12
+fffef138:	80 00 00 0f 	move s4, 0
+fffef13c:	c1 10 00 00 	or s6, s1, 4
+fffef140:	a5 84 1a 00 	or s5, s5, 1697
+fffef144:	e0 00 f2 c0 	move s7, s4
+fffef148:	00 01 f2 c0 	move s8, s4
+fffef14c:	28 81 42 c1 	cmplt_i s9, s8, s5
+fffef150:	49 00 00 f4 	bnz s9, 8 <read_serial_long+0xac>
+fffef154:	06 00 00 f6 	b 24 <read_serial_long+0xc0>
+fffef158:	08 05 00 05 	add_i s8, s8, 1
+fffef15c:	20 01 00 a8 	load_32 s9, (s0)
+fffef160:	29 09 00 01 	and s9, s9, 2
+fffef164:	49 ff ff f3 	bz s9, -24 <read_serial_long+0xa0>
+fffef168:	08 00 00 f6 	b 32 <read_serial_long+0xdc>
+fffef16c:	e7 00 00 10 	cmpeq_i s7, s7, 0
+fffef170:	e7 04 00 01 	and s7, s7, 1
+fffef174:	e6 00 00 88 	store_32 s7, (s6)
+fffef178:	00 01 f2 c0 	move s8, s4
+fffef17c:	20 01 00 a8 	load_32 s9, (s0)
+fffef180:	29 09 00 01 	and s9, s9, 2
+fffef184:	49 fe ff f3 	bz s9, -56 <read_serial_long+0xa0>
+fffef188:	82 00 00 a8 	load_32 s4, (s2)
+fffef18c:	a0 00 00 a8 	load_32 s5, (s0)
+fffef190:	84 60 00 0b 	shl s4, s4, 24
+fffef194:	64 80 01 c0 	or s3, s4, s3
+fffef198:	85 08 00 01 	and s4, s5, 2
+fffef19c:	63 20 00 0a 	shr s3, s3, 8
+fffef1a0:	c4 02 00 f4 	bnz s4, 88 <read_serial_long+0x14c>
+fffef1a4:	ac 00 00 4f 	movehi s5, 12
+fffef1a8:	80 00 00 0f 	move s4, 0
+fffef1ac:	c1 10 00 00 	or s6, s1, 4
+fffef1b0:	a5 84 1a 00 	or s5, s5, 1697
+fffef1b4:	e0 00 f2 c0 	move s7, s4
+fffef1b8:	00 01 f2 c0 	move s8, s4
+fffef1bc:	28 81 42 c1 	cmplt_i s9, s8, s5
+fffef1c0:	49 00 00 f4 	bnz s9, 8 <read_serial_long+0x11c>
+fffef1c4:	06 00 00 f6 	b 24 <read_serial_long+0x130>
+fffef1c8:	08 05 00 05 	add_i s8, s8, 1
+fffef1cc:	20 01 00 a8 	load_32 s9, (s0)
+fffef1d0:	29 09 00 01 	and s9, s9, 2
+fffef1d4:	49 ff ff f3 	bz s9, -24 <read_serial_long+0x110>
+fffef1d8:	08 00 00 f6 	b 32 <read_serial_long+0x14c>
+fffef1dc:	e7 00 00 10 	cmpeq_i s7, s7, 0
+fffef1e0:	e7 04 00 01 	and s7, s7, 1
+fffef1e4:	e6 00 00 88 	store_32 s7, (s6)
+fffef1e8:	00 01 f2 c0 	move s8, s4
+fffef1ec:	20 01 00 a8 	load_32 s9, (s0)
+fffef1f0:	29 09 00 01 	and s9, s9, 2
+fffef1f4:	49 fe ff f3 	bz s9, -56 <read_serial_long+0x110>
+fffef1f8:	82 00 00 a8 	load_32 s4, (s2)
+fffef1fc:	a0 00 00 a8 	load_32 s5, (s0)
+fffef200:	84 60 00 0b 	shl s4, s4, 24
+fffef204:	64 80 01 c0 	or s3, s4, s3
+fffef208:	85 08 00 01 	and s4, s5, 2
+fffef20c:	63 20 00 0a 	shr s3, s3, 8
+fffef210:	c4 02 00 f4 	bnz s4, 88 <read_serial_long+0x1bc>
+fffef214:	ac 00 00 4f 	movehi s5, 12
+fffef218:	80 00 00 0f 	move s4, 0
+fffef21c:	21 10 00 00 	or s1, s1, 4
+fffef220:	a5 84 1a 00 	or s5, s5, 1697
+fffef224:	c0 00 f2 c0 	move s6, s4
+fffef228:	e0 00 f2 c0 	move s7, s4
+fffef22c:	07 81 42 c1 	cmplt_i s8, s7, s5
+fffef230:	48 00 00 f4 	bnz s8, 8 <read_serial_long+0x18c>
+fffef234:	06 00 00 f6 	b 24 <read_serial_long+0x1a0>
+fffef238:	e7 04 00 05 	add_i s7, s7, 1
+fffef23c:	00 01 00 a8 	load_32 s8, (s0)
+fffef240:	08 09 00 01 	and s8, s8, 2
+fffef244:	48 ff ff f3 	bz s8, -24 <read_serial_long+0x180>
+fffef248:	08 00 00 f6 	b 32 <read_serial_long+0x1bc>
+fffef24c:	c6 00 00 10 	cmpeq_i s6, s6, 0
+fffef250:	c6 04 00 01 	and s6, s6, 1
+fffef254:	c1 00 00 88 	store_32 s6, (s1)
+fffef258:	e0 00 f2 c0 	move s7, s4
+fffef25c:	00 01 00 a8 	load_32 s8, (s0)
+fffef260:	08 09 00 01 	and s8, s8, 2
+fffef264:	48 fe ff f3 	bz s8, -56 <read_serial_long+0x180>
+fffef268:	02 00 00 a8 	load_32 s0, (s2)
+fffef26c:	00 60 00 0b 	shl s0, s0, 24
+fffef270:	00 80 01 c0 	or s0, s0, s3
+fffef274:	1f 00 00 f0 	ret
+
+00000000fffef278 write_serial_long:
+fffef278:	58 fc ff 4f 	movehi s2, 524280
+fffef27c:	22 00 01 00 	or s1, s2, 64
+fffef280:	61 00 00 a8 	load_32 s3, (s1)
+fffef284:	63 04 00 01 	and s3, s3, 1
+fffef288:	c3 ff ff f3 	bz s3, -8 <write_serial_long+0x8>
+fffef28c:	42 20 01 00 	or s2, s2, 72
+fffef290:	60 fc 03 01 	and s3, s0, 255
+fffef294:	62 00 00 88 	store_32 s3, (s2)
+fffef298:	60 20 00 0a 	shr s3, s0, 8
+fffef29c:	81 00 00 a8 	load_32 s4, (s1)
+fffef2a0:	84 04 00 01 	and s4, s4, 1
+fffef2a4:	c4 ff ff f3 	bz s4, -8 <write_serial_long+0x24>
+fffef2a8:	63 fc 03 01 	and s3, s3, 255
+fffef2ac:	62 00 00 88 	store_32 s3, (s2)
+fffef2b0:	60 40 00 0a 	shr s3, s0, 16
+fffef2b4:	81 00 00 a8 	load_32 s4, (s1)
+fffef2b8:	84 04 00 01 	and s4, s4, 1
+fffef2bc:	c4 ff ff f3 	bz s4, -8 <write_serial_long+0x3c>
+fffef2c0:	63 fc 03 01 	and s3, s3, 255
+fffef2c4:	62 00 00 88 	store_32 s3, (s2)
+fffef2c8:	61 00 00 a8 	load_32 s3, (s1)
+fffef2cc:	63 04 00 01 	and s3, s3, 1
+fffef2d0:	c3 ff ff f3 	bz s3, -8 <write_serial_long+0x50>
+fffef2d4:	00 60 00 0a 	shr s0, s0, 24
+fffef2d8:	02 00 00 88 	store_32 s0, (s2)
+fffef2dc:	1f 00 00 f0 	ret
+
+00000000fffef2e0 main:
+fffef2e0:	de 03 ff 05 	add_i sp, sp, -64
+fffef2e4:	1e f3 00 88 	store_32 s24, 60(sp)
+fffef2e8:	3e e3 00 88 	store_32 s25, 56(sp)
+fffef2ec:	5e d3 00 88 	store_32 s26, 52(sp)
+fffef2f0:	7e c3 00 88 	store_32 s27, 48(sp)
+fffef2f4:	fe b3 00 88 	store_32 ra, 44(sp)
+fffef2f8:	18 fc ff 4f 	movehi s0, 524280
+fffef2fc:	40 d4 00 0f 	move s2, 53
+fffef300:	00 03 00 0f 	move s24, 0
+fffef304:	20 30 01 00 	or s1, s0, 76
+fffef308:	40 03 01 00 	or s26, s0, 64
+fffef30c:	c0 10 00 00 	or s6, s0, 4
+fffef310:	41 00 00 88 	store_32 s2, (s1)
+fffef314:	2c 00 00 4f 	movehi s1, 12
+fffef318:	e0 10 01 00 	or s7, s0, 68
+fffef31c:	60 20 01 00 	or s3, s0, 72
+fffef320:	61 87 1a 00 	or s27, s1, 1697
+fffef324:	20 20 03 0f 	move s1, 200
+fffef328:	3e 50 00 88 	store_32 s1, 20(sp)
+fffef32c:	37 fc ff 4f 	movehi s1, 524279
+fffef330:	04 1c 81 4f 	movehi s0, 264420
+fffef334:	21 d0 02 00 	or s1, s1, 180
+fffef338:	3e a0 00 88 	store_32 s1, 40(sp)
+fffef33c:	20 00 01 4f 	movehi s1, 2048
+fffef340:	00 14 77 00 	or s0, s0, 7621
+fffef344:	1e 60 00 88 	store_32 s0, 24(sp)
+fffef348:	00 04 03 0f 	move s0, 193
+fffef34c:	1e 40 00 88 	store_32 s0, 16(sp)
+fffef350:	01 4c 06 00 	or s0, s1, 403
+fffef354:	1e 30 00 88 	store_32 s0, 12(sp)
+fffef358:	00 14 03 0f 	move s0, 197
+fffef35c:	1e 20 00 88 	store_32 s0, 8(sp)
+fffef360:	00 1c 03 0f 	move s0, 199
+fffef364:	1e 10 00 88 	store_32 s0, 4(sp)
+fffef368:	7e 90 00 88 	store_32 s3, 36(sp)
+fffef36c:	de 80 00 88 	store_32 s6, 32(sp)
+fffef370:	fe 70 00 88 	store_32 s7, 28(sp)
+fffef374:	1a 00 00 a8 	load_32 s0, (s26)
+fffef378:	00 08 00 01 	and s0, s0, 2
+fffef37c:	00 03 00 f4 	bnz s0, 96 <main+0xfc>
+fffef380:	06 00 00 f6 	b 24 <main+0xb8>
+fffef384:	01 60 00 0a 	shr s0, s1, 24
+fffef388:	03 00 00 88 	store_32 s0, (s3)
+fffef38c:	1a 00 00 a8 	load_32 s0, (s26)
+fffef390:	00 08 00 01 	and s0, s0, 2
+fffef394:	40 02 00 f4 	bnz s0, 72 <main+0xfc>
+fffef398:	00 00 fc c0 	move s0, s24
+fffef39c:	20 00 fc c0 	move s1, s24
+fffef3a0:	41 80 4d c1 	cmplt_i s2, s1, s27
+fffef3a4:	42 00 00 f4 	bnz s2, 8 <main+0xcc>
+fffef3a8:	06 00 00 f6 	b 24 <main+0xe0>
+fffef3ac:	21 04 00 05 	add_i s1, s1, 1
+fffef3b0:	5a 00 00 a8 	load_32 s2, (s26)
+fffef3b4:	42 08 00 01 	and s2, s2, 2
+fffef3b8:	42 ff ff f3 	bz s2, -24 <main+0xc0>
+fffef3bc:	08 00 00 f6 	b 32 <main+0xfc>
+fffef3c0:	00 00 00 10 	cmpeq_i s0, s0, 0
+fffef3c4:	00 04 00 01 	and s0, s0, 1
+fffef3c8:	06 00 00 88 	store_32 s0, (s6)
+fffef3cc:	20 00 fc c0 	move s1, s24
+fffef3d0:	5a 00 00 a8 	load_32 s2, (s26)
+fffef3d4:	42 08 00 01 	and s2, s2, 2
+fffef3d8:	42 fe ff f3 	bz s2, -56 <main+0xc0>
+fffef3dc:	07 00 00 a8 	load_32 s0, (s7)
+fffef3e0:	00 00 fd 05 	add_i s0, s0, -192
+fffef3e4:	20 18 00 16 	cmpgt_u s1, s0, 6
+fffef3e8:	e1 08 00 f4 	bnz s1, 284 <main+0x224>
+fffef3ec:	3e a0 00 a8 	load_32 s1, 40(sp)
+fffef3f0:	00 08 00 0b 	shl s0, s0, 2
+fffef3f4:	00 80 50 c0 	add_i s0, s0, s1
+fffef3f8:	00 00 00 a8 	load_32 s0, (s0)
+fffef3fc:	00 00 00 f0 	b s0
+fffef400:	2b ff ff f9 	call -852 <read_serial_long>
+fffef404:	20 03 f0 c0 	move s25, s0
+fffef408:	29 ff ff f9 	call -860 <read_serial_long>
+fffef40c:	1e 31 00 a8 	load_32 s8, 12(sp)
+fffef410:	fe 70 00 a8 	load_32 s7, 28(sp)
+fffef414:	de 80 00 a8 	load_32 s6, 32(sp)
+fffef418:	3e 60 00 a8 	load_32 s1, 24(sp)
+fffef41c:	e0 03 00 f2 	bz s0, 124 <main+0x1b8>
+fffef420:	3e 60 00 a8 	load_32 s1, 24(sp)
+fffef424:	40 00 fc c0 	move s2, s24
+fffef428:	7a 00 00 a8 	load_32 s3, (s26)
+fffef42c:	63 08 00 01 	and s3, s3, 2
+fffef430:	43 02 00 f4 	bnz s3, 72 <main+0x198>
+fffef434:	60 00 fc c0 	move s3, s24
+fffef438:	80 00 fc c0 	move s4, s24
+fffef43c:	a4 80 4d c1 	cmplt_i s5, s4, s27
+fffef440:	45 00 00 f4 	bnz s5, 8 <main+0x168>
+fffef444:	06 00 00 f6 	b 24 <main+0x17c>
+fffef448:	84 04 00 05 	add_i s4, s4, 1
+fffef44c:	ba 00 00 a8 	load_32 s5, (s26)
+fffef450:	a5 08 00 01 	and s5, s5, 2
+fffef454:	45 ff ff f3 	bz s5, -24 <main+0x15c>
+fffef458:	08 00 00 f6 	b 32 <main+0x198>
+fffef45c:	63 00 00 10 	cmpeq_i s3, s3, 0
+fffef460:	63 04 00 01 	and s3, s3, 1
+fffef464:	66 00 00 88 	store_32 s3, (s6)
+fffef468:	80 00 fc c0 	move s4, s24
+fffef46c:	ba 00 00 a8 	load_32 s5, (s26)
+fffef470:	a5 08 00 01 	and s5, s5, 2
+fffef474:	45 fe ff f3 	bz s5, -56 <main+0x15c>
+fffef478:	67 00 00 a8 	load_32 s3, (s7)
+fffef47c:	42 04 00 05 	add_i s2, s2, 1
+fffef480:	79 00 00 82 	store_8 s3, (s25)
+fffef484:	39 07 00 05 	add_i s25, s25, 1
+fffef488:	23 80 30 c0 	xor s1, s3, s1
+fffef48c:	62 00 80 c1 	cmplt_u s3, s2, s0
+fffef490:	21 00 74 c0 	mull_i s1, s1, s8
+fffef494:	a3 fc ff f5 	bnz s3, -108 <main+0x148>
+fffef498:	1a 00 00 a8 	load_32 s0, (s26)
+fffef49c:	00 04 00 01 	and s0, s0, 1
+fffef4a0:	c0 ff ff f3 	bz s0, -8 <main+0x1b8>
+fffef4a4:	7e 90 00 a8 	load_32 s3, 36(sp)
+fffef4a8:	1e 40 00 a8 	load_32 s0, 16(sp)
+fffef4ac:	03 00 00 88 	store_32 s0, (s3)
+fffef4b0:	1a 00 00 a8 	load_32 s0, (s26)
+fffef4b4:	00 04 00 01 	and s0, s0, 1
+fffef4b8:	c0 ff ff f3 	bz s0, -8 <main+0x1d0>
+fffef4bc:	01 fc 03 01 	and s0, s1, 255
+fffef4c0:	03 00 00 88 	store_32 s0, (s3)
+fffef4c4:	1a 00 00 a8 	load_32 s0, (s26)
+fffef4c8:	00 04 00 01 	and s0, s0, 1
+fffef4cc:	c0 ff ff f3 	bz s0, -8 <main+0x1e4>
+fffef4d0:	01 20 00 0a 	shr s0, s1, 8
+fffef4d4:	00 fc 03 01 	and s0, s0, 255
+fffef4d8:	03 00 00 88 	store_32 s0, (s3)
+fffef4dc:	1a 00 00 a8 	load_32 s0, (s26)
+fffef4e0:	00 04 00 01 	and s0, s0, 1
+fffef4e4:	c0 ff ff f3 	bz s0, -8 <main+0x1fc>
+fffef4e8:	01 40 00 0a 	shr s0, s1, 16
+fffef4ec:	00 fc 03 01 	and s0, s0, 255
+fffef4f0:	03 00 00 88 	store_32 s0, (s3)
+fffef4f4:	1a 00 00 a8 	load_32 s0, (s26)
+fffef4f8:	00 04 00 01 	and s0, s0, 1
+fffef4fc:	c0 ff ff f3 	bz s0, -8 <main+0x214>
+fffef500:	a1 ff ff f7 	b -380 <main+0xa4>
+fffef504:	1a 00 00 a8 	load_32 s0, (s26)
+fffef508:	00 04 00 01 	and s0, s0, 1
+fffef50c:	c0 ff ff f3 	bz s0, -8 <main+0x224>
+fffef510:	1e 50 00 a8 	load_32 s0, 20(sp)
+fffef514:	03 00 00 88 	store_32 s0, (s3)
+fffef518:	1a 00 00 a8 	load_32 s0, (s26)
+fffef51c:	00 08 00 01 	and s0, s0, 2
+fffef520:	e0 f5 ff f5 	bnz s0, -324 <main+0xfc>
+fffef524:	9d ff ff f7 	b -396 <main+0xb8>
+fffef528:	1a 00 00 a8 	load_32 s0, (s26)
+fffef52c:	00 04 00 01 	and s0, s0, 1
+fffef530:	c0 ff ff f3 	bz s0, -8 <main+0x248>
+fffef534:	1e 20 00 a8 	load_32 s0, 8(sp)
+fffef538:	03 00 00 88 	store_32 s0, (s3)
+fffef53c:	1a 00 00 a8 	load_32 s0, (s26)
+fffef540:	00 08 00 01 	and s0, s0, 2
+fffef544:	c0 f4 ff f5 	bnz s0, -360 <main+0xfc>
+fffef548:	94 ff ff f7 	b -432 <main+0xb8>
+fffef54c:	d8 fe ff f9 	call -1184 <read_serial_long>
+fffef550:	20 03 f0 c0 	move s25, s0
+fffef554:	d6 fe ff f9 	call -1192 <read_serial_long>
+fffef558:	40 00 f0 c0 	move s2, s0
+fffef55c:	00 80 fc c0 	move s0, s25
+fffef560:	20 00 fc c0 	move s1, s24
+fffef564:	1c 00 00 f8 	call 112 <memset>
+fffef568:	1a 00 00 a8 	load_32 s0, (s26)
+fffef56c:	00 04 00 01 	and s0, s0, 1
+fffef570:	c0 ff ff f3 	bz s0, -8 <main+0x288>
+fffef574:	1e 10 00 a8 	load_32 s0, 4(sp)
+fffef578:	7e 90 00 a8 	load_32 s3, 36(sp)
+fffef57c:	de 80 00 a8 	load_32 s6, 32(sp)
+fffef580:	fe 70 00 a8 	load_32 s7, 28(sp)
+fffef584:	03 00 00 88 	store_32 s0, (s3)
+fffef588:	1a 00 00 a8 	load_32 s0, (s26)
+fffef58c:	00 08 00 01 	and s0, s0, 2
+fffef590:	60 f2 ff f5 	bnz s0, -436 <main+0xfc>
+fffef594:	81 ff ff f7 	b -508 <main+0xb8>
+fffef598:	00 00 00 0f 	move s0, 0
+fffef59c:	06 00 00 88 	store_32 s0, (s6)
+fffef5a0:	1a 00 00 a8 	load_32 s0, (s26)
+fffef5a4:	00 04 00 01 	and s0, s0, 1
+fffef5a8:	c0 ff ff f3 	bz s0, -8 <main+0x2c0>
+fffef5ac:	20 0c 03 0f 	move s1, 195
+fffef5b0:	23 00 00 88 	store_32 s1, (s3)
+fffef5b4:	fe b3 00 a8 	load_32 ra, 44(sp)
+fffef5b8:	00 00 00 0f 	move s0, 0
+fffef5bc:	7e c3 00 a8 	load_32 s27, 48(sp)
+fffef5c0:	5e d3 00 a8 	load_32 s26, 52(sp)
+fffef5c4:	3e e3 00 a8 	load_32 s25, 56(sp)
+fffef5c8:	1e f3 00 a8 	load_32 s24, 60(sp)
+fffef5cc:	de 03 01 05 	add_i sp, sp, 64
+fffef5d0:	1f 00 00 f0 	ret
+
+00000000fffef5d4 memset:
+fffef5d4:	60 0c 00 01 	and s3, s0, 3
+fffef5d8:	23 02 00 f4 	bnz s3, 68 <memset+0x48>
+fffef5dc:	62 14 00 18 	cmplt_u s3, s2, 5
+fffef5e0:	e3 01 00 f4 	bnz s3, 60 <memset+0x48>
+fffef5e4:	61 60 00 0b 	shl s3, s1, 24
+fffef5e8:	81 fc 03 01 	and s4, s1, 255
+fffef5ec:	63 00 02 c0 	or s3, s3, s4
+fffef5f0:	a4 20 00 0b 	shl s5, s4, 8
+fffef5f4:	84 40 00 0b 	shl s4, s4, 16
+fffef5f8:	63 80 02 c0 	or s3, s3, s5
+fffef5fc:	83 00 02 c0 	or s4, s3, s4
+fffef600:	60 00 f0 c0 	move s3, s0
+fffef604:	42 f0 ff 05 	add_i s2, s2, -4
+fffef608:	83 00 00 88 	store_32 s4, (s3)
+fffef60c:	63 10 00 05 	add_i s3, s3, 4
+fffef610:	a2 10 00 16 	cmpgt_u s5, s2, 4
+fffef614:	85 ff ff f5 	bnz s5, -16 <memset+0x30>
+fffef618:	03 00 00 f6 	b 12 <memset+0x50>
+fffef61c:	60 00 f0 c0 	move s3, s0
+fffef620:	c2 00 00 f2 	bz s2, 24 <memset+0x64>
+fffef624:	83 04 00 05 	add_i s4, s3, 1
+fffef628:	23 00 00 82 	store_8 s1, (s3)
+fffef62c:	42 fc ff 05 	add_i s2, s2, -1
+fffef630:	60 00 f2 c0 	move s3, s4
+fffef634:	82 ff ff f5 	bnz s2, -16 <memset+0x50>
+fffef638:	1f 00 00 f0 	ret
