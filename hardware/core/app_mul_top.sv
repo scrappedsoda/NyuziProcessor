@@ -20,7 +20,7 @@ module app_mul_top(
 	logic [15:0] fractional_sum_corr_carry;
 	logic [16:0] fractional_sum_appended;
 	
-	logic [47:0] internal_product;
+	logic [46:0] internal_product;
 	logic [30:0] shiftReg_multiplicant_tmp;
 	logic [22:0] shiftReg_multiplicant;
     logic [30:0] shiftReg_multiplier_tmp;
@@ -28,59 +28,55 @@ module app_mul_top(
 	
 	const logic [14:0] corr_factor = 15'b000101000000000;
 	
-	assign product = internal_product[47:16];
+	assign product = internal_product[46:15];
 	
-	// Leading one detector for multiplicant 
-	always_comb
-            begin
-                casez (multiplicant)
-                    16'b1???????????????: lod_multiplicant = 15;
-                    16'b01??????????????: lod_multiplicant = 14;
-                    16'b001?????????????: lod_multiplicant = 13;
-                    16'b0001????????????: lod_multiplicant = 12;
-                    16'b00001???????????: lod_multiplicant = 11;
-                    16'b000001??????????: lod_multiplicant = 10;
-                    16'b0000001?????????: lod_multiplicant = 9;
-                    16'b00000001????????: lod_multiplicant = 8;
-                    16'b000000001???????: lod_multiplicant = 7;
-                    16'b0000000001??????: lod_multiplicant = 6;
-                    16'b00000000001?????: lod_multiplicant = 5;
-                    16'b000000000001????: lod_multiplicant = 4;
-                    16'b0000000000001???: lod_multiplicant = 3;
-                    16'b00000000000001??: lod_multiplicant = 2;
-                    16'b000000000000001?: lod_multiplicant = 1;
-                    16'b0000000000000001: lod_multiplicant = 0;
-                    16'b0000000000000000: lod_multiplicant = 0;
-                    
-                    default: lod_multiplicant = 0;
-                endcase
-            end
+	always_comb begin
+            // Leading one detector for multiplicant 
+            casez (multiplicant)
+                16'b1???????????????: lod_multiplicant = 15;
+                16'b01??????????????: lod_multiplicant = 14;
+                16'b001?????????????: lod_multiplicant = 13;
+                16'b0001????????????: lod_multiplicant = 12;
+                16'b00001???????????: lod_multiplicant = 11;
+                16'b000001??????????: lod_multiplicant = 10;
+                16'b0000001?????????: lod_multiplicant = 9;
+                16'b00000001????????: lod_multiplicant = 8;
+                16'b000000001???????: lod_multiplicant = 7;
+                16'b0000000001??????: lod_multiplicant = 6;
+                16'b00000000001?????: lod_multiplicant = 5;
+                16'b000000000001????: lod_multiplicant = 4;
+                16'b0000000000001???: lod_multiplicant = 3;
+                16'b00000000000001??: lod_multiplicant = 2;
+                16'b000000000000001?: lod_multiplicant = 1;
+                16'b0000000000000001: lod_multiplicant = 0;
+                16'b0000000000000000: lod_multiplicant = 0;
+                
+                default: lod_multiplicant = 0;
+            endcase
 	
-	// Leading one detector for multiplier.
-	always_comb
-            begin
-                casez (multiplier)
-                    16'b1???????????????: lod_multiplier = 15;
-                    16'b01??????????????: lod_multiplier = 14;
-                    16'b001?????????????: lod_multiplier = 13;
-                    16'b0001????????????: lod_multiplier = 12;
-                    16'b00001???????????: lod_multiplier = 11;
-                    16'b000001??????????: lod_multiplier = 10;
-                    16'b0000001?????????: lod_multiplier = 9;
-                    16'b00000001????????: lod_multiplier = 8;
-                    16'b000000001???????: lod_multiplier = 7;
-                    16'b0000000001??????: lod_multiplier = 6;
-                    16'b00000000001?????: lod_multiplier = 5;
-                    16'b000000000001????: lod_multiplier = 4;
-                    16'b0000000000001???: lod_multiplier = 3;
-                    16'b00000000000001??: lod_multiplier = 2;
-                    16'b000000000000001?: lod_multiplier = 1;
-                    16'b0000000000000001: lod_multiplier = 0;
-                    16'b0000000000000000: lod_multiplier = 0;
-                    
-                    default: lod_multiplier = 0;
-                endcase
-    // Barrel shifter for multiplicant's fractional part.
+            // Leading one detector for multiplier.
+            casez (multiplier)
+                16'b1???????????????: lod_multiplier = 15;
+                16'b01??????????????: lod_multiplier = 14;
+                16'b001?????????????: lod_multiplier = 13;
+                16'b0001????????????: lod_multiplier = 12;
+                16'b00001???????????: lod_multiplier = 11;
+                16'b000001??????????: lod_multiplier = 10;
+                16'b0000001?????????: lod_multiplier = 9;
+                16'b00000001????????: lod_multiplier = 8;
+                16'b000000001???????: lod_multiplier = 7;
+                16'b0000000001??????: lod_multiplier = 6;
+                16'b00000000001?????: lod_multiplier = 5;
+                16'b000000000001????: lod_multiplier = 4;
+                16'b0000000000001???: lod_multiplier = 3;
+                16'b00000000000001??: lod_multiplier = 2;
+                16'b000000000000001?: lod_multiplier = 1;
+                16'b0000000000000001: lod_multiplier = 0;
+                16'b0000000000000000: lod_multiplier = 0;
+                
+                default: lod_multiplier = 0;
+            endcase
+            // Barrel shifter for multiplicant's fractional part.
             shiftReg_multiplicant_tmp = {multiplicant, 15'b0} >> lod_multiplicant;
 			shiftReg_multiplicant = shiftReg_multiplicant_tmp[22:0];
             frac_multiplicant = shiftReg_multiplicant[14:0];
@@ -91,7 +87,7 @@ module app_mul_top(
 			frac_multiplier = shiftReg_multiplier[14:0];
 	
             // Generate sum of fractional parts.
-			fractional_sum_carry = frac_multiplicant + frac_multiplier;
+			fractional_sum_carry = {'0, frac_multiplicant} + {'0, frac_multiplier};
 			fractional_sum = fractional_sum_carry[14:0];
 			if(fractional_sum_carry[15]) begin
 			     fractional_sum_corr_carry = {'0,fractional_sum} + ({'0,corr_factor} >> 1);
