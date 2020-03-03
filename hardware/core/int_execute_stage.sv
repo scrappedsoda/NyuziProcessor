@@ -83,6 +83,7 @@ module int_execute_stage(
             scalar_t lane_result;
             scalar_t difference;
             scalar_t product;
+            scalar_t sum;
             logic mul_sign;
             logic[15:0] multiplicant;
             logic[15:0] multiplier;
@@ -98,6 +99,7 @@ module int_execute_stage(
             logic[5:0] reciprocal_estimate;
             logic shift_in_sign;
             scalar_t rshift;
+            logic carry;
 
             assign lane_operand1 = of_operand1[lane];
             assign lane_operand2 = of_operand2[lane];
@@ -107,8 +109,15 @@ module int_execute_stage(
             assign zero = difference == 0;
             assign signed_gtr = overflow == negative;
 
+			// The approximate adder.
+				approx_adder #(.APPROX_LV(16)) (
+				    .a (lane_operand1),
+				    .b (lane_operand1),
+				    .sum (sum),
+				    .c (carry));
+
 			// The approximate multiplier.
-			app_mul_top app_multiplier(
+			app_mul_top app_mul_lane(
 				.multiplicant (multiplicant),
 				.multiplier (multiplier),
 				.product (product),
@@ -266,7 +275,7 @@ module int_execute_stage(
                     OP_CTZ: lane_result = scalar_t'(tz);
                     OP_AND: lane_result = lane_operand1 & lane_operand2;
                     OP_XOR: lane_result = lane_operand1 ^ lane_operand2;
-                    OP_ADD_I: lane_result = lane_operand1 + lane_operand2;
+                    OP_ADD_I: lane_result = sum;
                     OP_SUB_I: lane_result = difference;
                     OP_CMPEQ_I: lane_result = {{31{1'b0}}, zero};
                     OP_CMPNE_I: lane_result = {{31{1'b0}}, !zero};
